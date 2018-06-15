@@ -56,22 +56,25 @@ include("../library/config.inc.php");
 		var directionDisplay;
 		var directionsService = new google.maps.DirectionsService();
 		var map;
-		
+		var markers = [];
+    var statusclick = true
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(showPosition);
 		} else { 
 			alert('Geolocation is not supported by this browser.');
 		}
 		
-		function showPosition(position) 
+		function showPosition(position)
 		{
 				latz = position.coords.latitude;
 				longz = position.coords.longitude;
-				$("#start").val(position.coords.latitude + ',' + position.coords.longitude);
+				//$("#start").val(position.coords.latitude + ',' + position.coords.longitude);
+
 				initialize(position.coords.latitude,position.coords.longitude);
 			
 			//alert('Latitude: ' + position.coords.latitude + '<br>Longitude: ' + position.coords.longitude');
 		}
+
 		
 		function initialize(lat,long) {
 			directionsDisplay = new google.maps.DirectionsRenderer();
@@ -83,11 +86,45 @@ include("../library/config.inc.php");
 			}
 
 			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+      google.maps.event.addListener(map, 'click', function(event) {
+        deleteMarkers()
+          var marker = new google.maps.Marker({
+          position: event.latLng,          
+          map: map,
+          
+        });
+        markers.push(marker);    
+  if(statusclick == 'start') $("#start").val(event.latLng.lat()+","+event.latLng.lng())  
+  else $("#end").val(event.latLng.lat()+","+event.latLng.lng())
+
+      }
+);
 			directionsDisplay.setMap(map);
 			
 		}
+    function route(clickroute){
+      statusclick = clickroute
+    }
+
+
+    function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+      function clearMarkers() {
+        setMapOnAll(null);
+      }
+      function showMarkers() {
+        setMapOnAll(map);
+      }
+      function deleteMarkers() {
+        clearMarkers();
+        markers = [];
+      }
 
 		function calcRoute() {
+      
 			var start = document.getElementById("start").value;
 			var end = document.getElementById("end").value;
 			var distanceInput = document.getElementById("distance");
@@ -97,7 +134,7 @@ include("../library/config.inc.php");
 				destination:end,
 				travelMode: google.maps.DirectionsTravelMode.DRIVING
 			};
-			
+
 			directionsService.route(request, function(response, status) {
 				if (status == google.maps.DirectionsStatus.OK) {
 					directionsDisplay.setDirections(response);
@@ -140,10 +177,10 @@ include("../library/config.inc.php");
               <div>
 			<p>
 				<label for="start">Start: </label>
-				<input type="text" name="start" id="start" />
+				<input type="text" name="start" id="start" onclick ="route('start')"/>
 				
 				<label for="end">End: </label>
-				<input type="text" name="end" id="end" />
+				<input type="text" name="end" id="end" onclick ="route('end')"/>
 				
 				<input type="submit" value="Calculate Route" onclick="calcRoute()" />
 			</p>
@@ -158,14 +195,6 @@ include("../library/config.inc.php");
             <!-- /.box-header --><!-- /.box-body -->
           </div>
           <!-- BOX -->
-      
-      
-      
-      
-      
-      
-      
-      
       
       
     </section>
