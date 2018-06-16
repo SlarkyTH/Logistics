@@ -4,6 +4,7 @@ include("../library/config.inc.php");
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,47 +43,50 @@ include("../library/config.inc.php");
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <style>
-.table>tbody>tr>td{
-    border-top: none;    
-}
-</style>
+    .table>tbody>tr>td {
+      border-top: none;
+    }
+  </style>
 
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini" style="font-family: 'Kanit', sans-serif;">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <?php include("header.inc.php"); ?>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
+    <?php include("header.inc.php"); ?>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
       <?php include("sidebar.inc.php"); ?>
-    <!-- /.sidebar -->
-  </aside>
+      <!-- /.sidebar -->
+    </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>Management Accounting</h1>
-    </section>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Management Accounting</h1>
+      </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <!-- Main row --><!-- /.nav-tabs-custom -->
+      <!-- Main content -->
+      <section class="content">
+        <!-- Main row -->
+        <!-- /.nav-tabs-custom -->
 
-          <!-- Chat box --><!-- /.box (chat box) -->
+        <!-- Chat box -->
+        <!-- /.box (chat box) -->
 
-          <!-- TO DO List -->
-<div class="box box-primary">
-<form action="" method="get">            
+        <!-- TO DO List -->
+        <div class="box box-primary">
+          <form action="" method="get">
             <div class="container">
               <table class="table table-borderless">
                 <thead>
                   <tr>
                     <th style="border-bottom:none;">
-                      
-                        <h3 style="margin-bottom: 30px;">ค่าใช้จ่ายอื่นๆ</h3>
-                      
+
+                      <h3 style="margin-bottom: 30px;">ค่าใช้จ่ายอื่นๆ</h3>
+
                     </th>
                   </tr>
                 </thead>
@@ -92,13 +96,13 @@ include("../library/config.inc.php");
                     <td>
                       <input type="text" name="wagesEmp" id="wagesEmp">
                     </td>
-                    
+
                   </tr>
                   <tr>
-                  <td>ค่าทางด่วน</td>
+                    <td>ค่าทางด่วน</td>
                     <td>
                       <input type="text" name="wagesExp" id="wagesExp">
-                    </td>                    
+                    </td>
                   </tr>
                   <tr>
                     <td>ค่าซ่อมแซม</td>
@@ -112,78 +116,79 @@ include("../library/config.inc.php");
                     <td>
                       <input type="text" name="other" id="other">
                     </td>
-                    
+
                   </tr>
                   <tr>
                     <td>รวมค่าใช้จ่ายทั้งสิ้น</td>
                     <td>
                       <input type="text" name="totalprice" id="totalprice">
                     </td>
-                    
+
                   </tr>
                 </tbody>
-                
+
               </table>
               <center>
-              <tr>
-                
-                <td colspan="2">
-                  <button type="button" class="btn btn-success left" style="margin-right:10px">ตกลง</button>
+                <tr>
 
-                  <button type="button" class="btn btn-danger" style="margin-left:10px">ยกเลิก</button>
+                  <td colspan="2">
+                    <button type="button" class="btn btn-success left" style="margin-right:10px">ตกลง</button>
+
+                    <button type="button" class="btn btn-danger" style="margin-left:10px">ยกเลิก</button>
                   </td>
-                  </tr>
-              </p>
+                </tr>
+                </p>
             </div>
           </form>
-          </div>
-    </section>
-  </div>
+        </div>
+      </section>
+    </div>
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
 
-</div>
-<!-- ./wrapper -->
+  </div>
+  <!-- ./wrapper -->
 
-<!-- jQuery 3.1.1 -->
-<script src="plugins/jQuery/jquery-3.1.1.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+  <!-- jQuery 3.1.1 -->
+  <script src="plugins/jQuery/jquery-3.1.1.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <!-- Morris.js charts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="plugins/morris/morris.min.js"></script>
+  <!-- Sparkline -->
+  <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
+  <!-- jvectormap -->
+  <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="plugins/knob/jquery.knob.js"></script>
+  <!-- daterangepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- datepicker -->
+  <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+  <!-- Bootstrap WYSIHTML5 -->
+  <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+  <!-- Slimscroll -->
+  <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="plugins/fastclick/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
 </body>
+
 </html>

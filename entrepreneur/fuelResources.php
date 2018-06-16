@@ -43,10 +43,10 @@ include("../library/config.inc.php");
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <style>
-  .table>tbody>tr>td{
-    border-top: none;    
-}
-</style>
+    .table>tbody>tr>td {
+      border-top: none;
+    }
+  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini" style="font-family: 'Kanit', sans-serif;">
@@ -85,7 +85,7 @@ include("../library/config.inc.php");
               <table class="table">
                 <thead>
                   <tr>
-                    <th colspan="4"style = "border-bottom: none">
+                    <th colspan="4" style="border-bottom: none">
                       <center>
                         <h3 style="margin-bottom: 30px;">ข้อมูลเชื้อเพลิง</h3>
                       </center>
