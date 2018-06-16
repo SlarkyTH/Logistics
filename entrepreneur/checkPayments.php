@@ -90,28 +90,28 @@ include("../library/config.inc.php");
                   </td>
                 </tr>
                 <tr>
-                <td>สกุล</td>                 
+                  <td>สกุล</td>
                   <td>
-                  <label for="lname">Warloc</label>
+                    <label for="lname">Warloc</label>
                   </td>
 
                 </tr>
                 <tr>
                   <td>สถานะการชำระเงิน</td>
                   <td>
-                  <label for="paystatus">Pay</label>
+                    <label for="paystatus">Pay</label>
                   </td>
 
-                </tr> 
+                </tr>
               </tbody>
 
             </table>
             <center>
-            <p style="margin-bottom:20px;">
-            <button type="button" class="btn btn-success left" style="margin-right:10px">ตกลง</button>
+              <p style="margin-bottom:20px;">
+                <button type="button" class="btn btn-success left" style="margin-right:10px">ตกลง</button>
 
-            <button type="button" class="btn btn-danger" style="margin-left:10px">ยกเลิก</button>
-            </p>
+                <button type="button" class="btn btn-danger" style="margin-left:10px">ยกเลิก</button>
+              </p>
             </center>
           </div>
 
