@@ -4,6 +4,7 @@ include("../library/config.inc.php");
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,42 +42,48 @@ include("../library/config.inc.php");
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  
+
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini" style="font-family: 'Kanit', sans-serif;">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <?php include("header.inc.php"); ?>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
+    <?php include("header.inc.php"); ?>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
       <?php include("sidebar.inc.php"); ?>
-    <!-- /.sidebar -->
-  </aside>
+      <!-- /.sidebar -->
+    </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>Create Orders Paid</h1>
-    </section>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Create Orders Paid</h1>
+      </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <!-- Main row --><!-- /.nav-tabs-custom -->
+      <!-- Main content -->
+      <section class="content">
+        <!-- Main row -->
+        <!-- /.nav-tabs-custom -->
 
-          <!-- Chat box --><!-- /.box (chat box) -->
+        <!-- Chat box -->
+        <!-- /.box (chat box) -->
 
-          <!-- TO DO List -->
-<div class="box box-primary">
-            <p align="right"><b>วันที่</b> : <span id="datetime"></span></p>
+        <!-- TO DO List -->
+        <div class="box box-primary">
+          <p align="right">
+            <b>วันที่</b> :
+            <span id="datetime"></span>
+          </p>
 
-            <script>
+          <script>
             var dt = new Date();
             document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
-            </script>
-            <form action="" method="get">
-              <div class="table-responsive">
+          </script>
+          <form action="" method="get">
+            <div class="table-responsive">
               <table class="table">
                 <tr>
                   <td colspan="2">รหัสผู้ประกอบการ</td>
@@ -84,136 +91,146 @@ include("../library/config.inc.php");
                   <td colspan="2">นามสกุล</td>
                 </tr>
                 <tr>
-                <th>ต้นทาง</th>
+                  <th>ต้นทาง</th>
                 </tr>
                 <tr>
-                <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
+                  <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
                 </tr>
                 <tr>
-                <td colspan="2">&emsp;ตำบล/แขวง</td>
-                <td colspan="2">อำเภอ/เขต</td>
-                <td colspan="2">จังหวัด</td>
+                  <td colspan="2">&emsp;ตำบล/แขวง</td>
+                  <td colspan="2">อำเภอ/เขต</td>
+                  <td colspan="2">จังหวัด</td>
                 </tr>
                 <tr>
-                <th>ปลายทาง</th>
+                  <th>ปลายทาง</th>
                 </tr>
                 <tr>
-                <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
+                  <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
                 </tr>
                 <tr>
-                <td colspan="2">&emsp;ตำบล/แขวง</td>
-                <td colspan="2">อำเภอ/เขต</td>
-                <td colspan="2">จังหวัด</td>
+                  <td colspan="2">&emsp;ตำบล/แขวง</td>
+                  <td colspan="2">อำเภอ/เขต</td>
+                  <td colspan="2">จังหวัด</td>
                 </tr>
                 <tr>
-                <th>ข้อมูลสินค้า</th>
+                  <th>ข้อมูลสินค้า</th>
                 </tr>
                 <tr>
-                <th>&emsp;ประเภท A</th>
+                  <th>&emsp;ประเภท A</th>
                 </tr>
                 <tr>
-                <td>&emsp;&emsp;จำนวน</td>
-                <td></td>
-                <td>กล่อง</td>
-                <td>&emsp;&emsp;น้ำหนัก</td>
-                <td></td>
-                <td>ก.ก.</td>
-                <tr>
-                <th>&emsp;ประเภท B</th>
-                </tr>
-                <tr>
-                <td>&emsp;&emsp;จำนวน</td>
-                <td></td>
-                <td>กล่อง</td>
-                <td>&emsp;&emsp;น้ำหนัก</td>
-                <td></td>
-                <td>ก.ก.</td>
-                <tr>
-                <th>&emsp;ประเภท C</th>
-                </tr>
-                <tr>
-                <td>&emsp;&emsp;จำนวน</td>
-                <td></td>
-                <td>กล่อง</td>
-                <td>&emsp;&emsp;น้ำหนัก</td>
-                <td></td>
-                <td>ก.ก.</td>
-                </tr>
-                <tr>
-                <th>รวมสินค้าทั้งสิน</th>
-                </tr>
-                <tr>
-                <th>&emsp;&emsp;จำนวนสุทธิ</th>
-                <td></td>
-                <th>กล่อง</th>
-                <th>&emsp;&emsp;น้ำหนักสุทธิ</th>
-                <td></td>
-                <th>ก.ก.</th>
-                </tr>
-                <tr></tr>
-                <tr>
-                  <th>ราคา</th>
-                  <th></th>
-                  <th>บาท</th>
-                  <th></th>
-                  <th>วิธีการชำระเงิน</th>
-                  <th>บาท</th>
-                </tr>
-                <tr>
-                  <th>รหัสผู้ขนส่ง</th>
-                  <th></th>
-                  <th>ชื่อ/บริษัท</th>
-                  <th></th>
-                </tr>
+                  <td>&emsp;&emsp;จำนวน</td>
+                  <td></td>
+                  <td>กล่อง</td>
+                  <td>&emsp;&emsp;น้ำหนัก</td>
+                  <td></td>
+                  <td>ก.ก.</td>
+                  <tr>
+                    <th>&emsp;ประเภท B</th>
+                  </tr>
+                  <tr>
+                    <td>&emsp;&emsp;จำนวน</td>
+                    <td></td>
+                    <td>กล่อง</td>
+                    <td>&emsp;&emsp;น้ำหนัก</td>
+                    <td></td>
+                    <td>ก.ก.</td>
+                    <tr>
+                      <th>&emsp;ประเภท C</th>
+                    </tr>
+                    <tr>
+                      <td>&emsp;&emsp;จำนวน</td>
+                      <td></td>
+                      <td>กล่อง</td>
+                      <td>&emsp;&emsp;น้ำหนัก</td>
+                      <td></td>
+                      <td>ก.ก.</td>
+                    </tr>
+                    <tr>
+                      <th>รวมสินค้าทั้งสิน</th>
+                    </tr>
+                    <tr>
+                      <th>&emsp;&emsp;จำนวนสุทธิ</th>
+                      <td></td>
+                      <th>กล่อง</th>
+                      <th>&emsp;&emsp;น้ำหนักสุทธิ</th>
+                      <td></td>
+                      <th>ก.ก.</th>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                      <th>ราคา</th>
+                      <th></th>
+                      <th>บาท</th>
+                      <th></th>
+                      <th>วิธีการชำระเงิน</th>
+                      <th>บาท</th>
+                    </tr>
+                    <tr>
+                      <th>รหัสผู้ขนส่ง</th>
+                      <th></th>
+                      <th>ชื่อ/บริษัท</th>
+                      <th></th>
+                    </tr>
               </table>
+            <p style="margin:20px;">
+            <center>
+              <button type="button" class="btn btn-primary" style="margin:20px">พิมพ์</button>
+              <button type="button" class="btn btn-success" style="margin:20px">ตกลง</button>
+              <button type="button" class="btn btn-warning" style="margin:20px">ย้อนกลับ</button>
+              <button type="button" class="btn btn-danger" style="margin:20px">ยกเลิก</button>
+          </p>
+          </center>
           </div>
-    </section>
+            </form>  
+      </section>
+      </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
   </div>
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+  <!-- ./wrapper -->
 
-
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery 3.1.1 -->
-<script src="plugins/jQuery/jquery-3.1.1.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+  <!-- jQuery 3.1.1 -->
+  <script src="plugins/jQuery/jquery-3.1.1.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <!-- Morris.js charts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="plugins/morris/morris.min.js"></script>
+  <!-- Sparkline -->
+  <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
+  <!-- jvectormap -->
+  <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="plugins/knob/jquery.knob.js"></script>
+  <!-- daterangepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- datepicker -->
+  <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+  <!-- Bootstrap WYSIHTML5 -->
+  <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+  <!-- Slimscroll -->
+  <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="plugins/fastclick/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
 </body>
+
 </html>
