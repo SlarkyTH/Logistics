@@ -68,7 +68,65 @@ include("../library/config.inc.php");
 
           <!-- TO DO List -->
 <div class="box box-primary">
-            Hello world
+<form action="" method="get">            
+            <div class="container">
+              <table class="table " style="border: none;">
+                <thead>
+                  <tr>
+                    <th>
+                      
+                        <h3 style="margin-bottom: 30px;">ค่าใช้จ่ายอื่นๆ</h3>
+                      
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ค่าจ้างพนักงาน</td>
+                    <td>
+                      <input type="text" name="wagesEmp" id="wagesEmp">
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                  <td>ค่าทางด่วน</td>
+                    <td>
+                      <input type="text" name="wagesExp" id="wagesExp">
+                    </td>                    
+                  </tr>
+                  <tr>
+                    <td>ค่าซ่อมแซม</td>
+                    <td>
+                      <input type="text" name="repairprice" id="repairprice">
+                    </td>
+
+                  </tr>
+                  <tr>
+                    <td>อื่นๆ</td>
+                    <td>
+                      <input type="text" name="other" id="other">
+                    </td>
+                    
+                  </tr>
+                  <trstyle="margin:30px;">
+                    <td>รวมค่าใช้จ่ายทั้งสิ้น</td>
+                    <td>
+                      <input type="text" name="totalprice" id="totalprice">
+                    </td>
+                    
+                  </tr>
+                </tbody>
+                
+              </table>
+              <center>
+                <p style="margin:20px;padding:20px;">
+                  <button type="button" class="btn btn-success left" style="margin-right:10px">ตกลง</button>
+
+                  <button type="button" class="btn btn-danger" style="margin-left:10px">ยกเลิก</button>
+              </center>
+              </p>
+            </div>
+          </form>
           </div>
     </section>
   </div>
