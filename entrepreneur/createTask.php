@@ -142,9 +142,9 @@ input {
   </tr>
   <tr>
   <td>เวลารับสินค้า</td>
-  <td><input type="date" name="fname"></td>
+  <td><input type="time" name="fname"></td>
   <td>เวลาส่งสินค้า</td>
-  <td><input type="date" name="fname"></td>
+  <td><input type="time" name="fname"></td>
   </tr>
 </table>
 </div>
