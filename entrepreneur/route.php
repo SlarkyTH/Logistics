@@ -265,7 +265,7 @@ include("../library/config.inc.php");
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
 
-<!-- mikerog -->
+
 
 </body>
 
