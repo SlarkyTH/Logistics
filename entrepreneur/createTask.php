@@ -136,15 +136,15 @@ input {
   </tr>
   <tr>
     <td>วันรับสินค้า</td>
-    <td><input type="text" name="fname"></td>
+    <td><input type="date" name="fname"></td>
     <td>วันส่งสินค้า</td>
-    <td><input type="text" name="fname"></td>
+    <td><input type="date" name="fname"></td>
   </tr>
   <tr>
   <td>เวลารับสินค้า</td>
-  <td><input type="text" name="fname"></td>
+  <td><input type="date" name="fname"></td>
   <td>เวลาส่งสินค้า</td>
-  <td><input type="text" name="fname"></td>
+  <td><input type="date" name="fname"></td>
   </tr>
 </table>
 </div>
