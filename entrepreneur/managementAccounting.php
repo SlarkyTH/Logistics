@@ -41,6 +41,12 @@ include("../library/config.inc.php");
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+.table>tbody>tr>td{
+    border-top: none;    
+}
+</style>
+
 </head>
 <body class="hold-transition skin-blue sidebar-mini" style="font-family: 'Kanit', sans-serif;">
 <div class="wrapper">
@@ -70,10 +76,10 @@ include("../library/config.inc.php");
 <div class="box box-primary">
 <form action="" method="get">            
             <div class="container">
-              <table class="table " style="border: none;">
+              <table class="table table-borderless">
                 <thead>
                   <tr>
-                    <th>
+                    <th style="border-bottom:none;">
                       
                         <h3 style="margin-bottom: 30px;">ค่าใช้จ่ายอื่นๆ</h3>
                       
@@ -82,7 +88,7 @@ include("../library/config.inc.php");
                 </thead>
                 <tbody>
                   <tr>
-                    <td>ค่าจ้างพนักงาน</td>
+                    <td style="border-top:none;">ค่าจ้างพนักงาน</td>
                     <td>
                       <input type="text" name="wagesEmp" id="wagesEmp">
                     </td>
@@ -108,7 +114,7 @@ include("../library/config.inc.php");
                     </td>
                     
                   </tr>
-                  <trstyle="margin:30px;">
+                  <tr>
                     <td>รวมค่าใช้จ่ายทั้งสิ้น</td>
                     <td>
                       <input type="text" name="totalprice" id="totalprice">
@@ -119,11 +125,14 @@ include("../library/config.inc.php");
                 
               </table>
               <center>
-                <p style="margin:20px;padding:20px;">
+              <tr>
+                
+                <td colspan="2">
                   <button type="button" class="btn btn-success left" style="margin-right:10px">ตกลง</button>
 
                   <button type="button" class="btn btn-danger" style="margin-left:10px">ยกเลิก</button>
-              </center>
+                  </td>
+                  </tr>
               </p>
             </div>
           </form>
