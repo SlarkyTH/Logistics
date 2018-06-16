@@ -74,7 +74,7 @@ include("../library/config.inc.php");
         <div class="box box-primary">
           <form action="" method="get">
             <label for="date" style="margin: 20px;">วัน / เดือน / ปี </label>
-            <input type="datetime" name="" id="">
+            <input type="date" name="" id="">
             <div class="container">
 
               <table class="table">
