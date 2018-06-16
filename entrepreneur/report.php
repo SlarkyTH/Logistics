@@ -42,6 +42,14 @@ include("../library/config.inc.php");
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    .btn-block {
+      display: block;
+      width: 50%;
+      margin: 30px;
+
+    }
+  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -76,32 +84,12 @@ include("../library/config.inc.php");
           <div class="container text-center">
             <div class="row" style="margin:30px;">
               <center>
-                <table>
-                  <tr>
-                    <td>
-                      <button type="button" class="btn btn-twitter btn-lg btn-block">รายงานข้อมูลผู้ประกอบการ</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-vk btn-lg btn-block">รายงานข้อมูลลูกค้า</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button type="button" class="btn btn-facebook btn-lg btn-block">รายงานข้อมูลรถ</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-bitbucket btn-lg btn-block">รายงานข้อมูลผู้ขับรถ</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <button type="button" class="btn btn-dropbox btn-lg btn-block">รายงานการขนส่ง</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-facebook btn-lg btn-block">รายงานข้อมูลรถ</button>
-                    </td>
-                  </tr>
-                </table>
+                <button type="button" class="btn btn-twitter btn-lg btn-block">รายงานข้อมูลผู้ประกอบการ</button>
+                <button type="button" class="btn btn-vk btn-lg btn-block">รายงานข้อมูลลูกค้า</button>
+                <button type="button" class="btn btn-facebook btn-lg btn-block">รายงานข้อมูลรถ</button>
+                <button type="button" class="btn btn-bitbucket btn-lg btn-block">รายงานข้อมูลผู้ขับรถ</button>
+                <button type="button" class="btn btn-dropbox btn-lg btn-block">รายงานการขนส่ง</button>
+                <button type="button" class="btn btn-facebook btn-lg btn-block">รายงานข้อมูลรถ</button>
               </center>
             </div>
             <p style="margin:20px;">
