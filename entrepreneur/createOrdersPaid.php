@@ -81,8 +81,8 @@ include("../library/config.inc.php");
                     <th colspan="4">
                       <h3 style="margin-bottom: 30px;">สร้างใบงาน</h3>
                     </th>
-                    <td>
-                      <p align="right">
+                    <td colspan="2">
+                      <p class="text-right">
                         <b>วันที่</b> :
                         <span id="datetime"></span>
                       </p>
