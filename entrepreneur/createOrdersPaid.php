@@ -75,7 +75,7 @@ include("../library/config.inc.php");
             document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
             </script>
             <br>
-            <p>รหัสผู้ประกอบการ</p><p>ชื่อ</p>
+            <span>รหัสผู้ประกอบการ</span>&emsp;&emsp;&emsp;<span>ชื่อ</span>
           </div>
     </section>
   </div>
