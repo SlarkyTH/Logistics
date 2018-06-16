@@ -41,7 +41,7 @@ include("../library/config.inc.php");
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <style>
+  <!-- <style>
 table, th, td {
     border: 1px solid black;
     padding: 5px;
@@ -52,7 +52,7 @@ table {
 input {
     width: 50%;
 }
-</style>
+</style> -->
 </head>
 <body class="hold-transition skin-blue sidebar-mini" style="font-family: 'Kanit', sans-serif;">
 <div class="wrapper">
@@ -79,6 +79,7 @@ input {
           <!-- Chat box --><!-- /.box (chat box) -->
 
           <!-- TO DO List -->
+          <div class="box box-primary">
           <?php $result = mysql_query("SELECT * FROM entrepreneur where Enter_user_ref='".$_SESSION["xuser_ref"]."'");
   while ($row = mysql_fetch_array($result, MYSQL_BOTH)) {
   ?><li><span class="text"><?php printf ("<b>รหัสผู้ประกอบการ</b>:  %s <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ชื่อ</b>:  %s", $row[0], $row["Enter_Name"]);?></span><?php
@@ -154,7 +155,7 @@ input {
 <button type="reset" class="btn btn-default" value="Reset">ล้าง</button>
 <button type="button" class="btn btn-default">ยกเลิก</button>
 </form>
-
+</div>
     </section>
   </div>
     </section>
