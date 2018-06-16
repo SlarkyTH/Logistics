@@ -41,6 +41,7 @@ include("../library/config.inc.php");
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  
 </head>
 <body class="hold-transition skin-blue sidebar-mini" style="font-family: 'Kanit', sans-serif;">
 <div class="wrapper">
@@ -74,8 +75,43 @@ include("../library/config.inc.php");
             var dt = new Date();
             document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
             </script>
-            <br>
-            <span>รหัสผู้ประกอบการ</span>&emsp;&emsp;&emsp;<span>ชื่อ</span>
+            <form action="" method="get">
+              <div class="table-responsive">
+              <table class="table">
+                <tr>
+                  <td>รหัสผู้ประกอบการ</td>
+                  <td>ชื่อ</td>
+                  <td>นามสกุล</td>
+                </tr>
+                <tr>
+                <th>ต้นทาง</th>
+                </tr>
+                <tr>
+                <td>ชื่อผู้ส่ง/ชื่อบริษัท</td>
+                </tr>
+                <tr>
+                <td>ตำบล/แขวง</td>
+                <td>อำเภอ/เขต</td>
+                <td>จังหวัด</td>
+                </tr>
+                <tr>
+                <th>ปลายทาง</th>
+                </tr>
+                <tr>
+                <td>ชื่อผู้ส่ง/ชื่อบริษัท</td>
+                </tr>
+                <tr>
+                <td>ตำบล/แขวง</td>
+                <td>อำเภอ/เขต</td>
+                <td>จังหวัด</td>
+                </tr>
+                <tr>
+                <th>ข้อมูลสินค้า</th>
+                </tr>
+                <tr>
+                <th>ประเภท A</th>
+                </tr>
+              </table>
           </div>
     </section>
   </div>
