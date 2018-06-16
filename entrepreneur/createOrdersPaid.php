@@ -68,7 +68,14 @@ include("../library/config.inc.php");
 
           <!-- TO DO List -->
 <div class="box box-primary">
-            Hello world
+            <p align="right"><b>วันที่</b> : <span id="datetime"></span></p>
+
+            <script>
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+            </script>
+            <br>
+            <p>รหัสผู้ประกอบการ</p>
           </div>
     </section>
   </div>
