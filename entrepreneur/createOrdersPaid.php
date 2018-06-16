@@ -73,116 +73,136 @@ include("../library/config.inc.php");
 
         <!-- TO DO List -->
         <div class="box box-primary">
-          <p align="right">
-            <b>วันที่</b> :
-            <span id="datetime"></span>
-          </p>
-
-          <script>
-            var dt = new Date();
-            document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
-          </script>
           <form action="" method="get">
             <div class="table-responsive">
               <table class="table">
-                <tr>
-                  <td colspan="2">รหัสผู้ประกอบการ</td>
-                  <td colspan="2">ชื่อ</td>
-                  <td colspan="2">นามสกุล</td>
-                </tr>
-                <tr>
-                  <th>ต้นทาง</th>
-                </tr>
-                <tr>
-                  <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
-                </tr>
-                <tr>
-                  <td colspan="2">&emsp;ตำบล/แขวง</td>
-                  <td colspan="2">อำเภอ/เขต</td>
-                  <td colspan="2">จังหวัด</td>
-                </tr>
-                <tr>
-                  <th>ปลายทาง</th>
-                </tr>
-                <tr>
-                  <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
-                </tr>
-                <tr>
-                  <td colspan="2">&emsp;ตำบล/แขวง</td>
-                  <td colspan="2">อำเภอ/เขต</td>
-                  <td colspan="2">จังหวัด</td>
-                </tr>
-                <tr>
-                  <th>ข้อมูลสินค้า</th>
-                </tr>
-                <tr>
-                  <th>&emsp;ประเภท A</th>
-                </tr>
-                <tr>
-                  <td>&emsp;&emsp;จำนวน</td>
-                  <td></td>
-                  <td>กล่อง</td>
-                  <td>&emsp;&emsp;น้ำหนัก</td>
-                  <td></td>
-                  <td>ก.ก.</td>
+                <thead>
                   <tr>
-                    <th>&emsp;ประเภท B</th>
+                    <th colspan="4">
+                      <h3 style="margin-bottom: 30px;">สร้างใบงาน</h3>
+                    </th>
+                    <td>
+                      <p align="right">
+                        <b>วันที่</b> :
+                        <span id="datetime"></span>
+                      </p>
+                      <script>
+                        var dt = new Date();
+                        document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+                      </script>
+                    </td>
+                  <tr>
+                </thead>
+                <tbody>
+                  <td>รหัสผู้ประกอบการ</td>
+                  <td>2</td>
+                  <td>ชื่อ</td>
+                  <td>นาย อำนาจ</td>
+                  <td>นามสกุล</td>
+                  <td>สาดส่ง</td>
+                  </tr>
+                  <tr>
+                    <th>ต้นทาง</th>
+                  </tr>
+                  <tr>
+                    <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
+                    <td>google Corp., Ltd.</td>
+                  </tr>
+                  <tr>
+                    <td>&emsp;ตำบล/แขวง</td>
+                    <td>ลุมพินี</td>
+                    <td>อำเภอ/เขต</td>
+                    <td>ปทุมวัน</td>
+                    <td>จังหวัด</td>
+                    <td>กรุงเทพมหานคร</td>
+                  </tr>
+                  <tr>
+                    <th>ปลายทาง</th>
+                  </tr>
+                  <tr>
+                    <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
+                    <td>Thai Samsung Electronich Co.,Ltd.</td>
+                  </tr>
+                  <tr>
+                    <td>&emsp;ตำบล/แขวง</td>
+                    <td>ยานนาวา</td>
+                    <td>อำเภอ/เขต</td>
+                    <td>สาทร</td>
+                    <td>จังหวัด</td>
+                    <td>กรุงเทพมหานคร</td>
+                  </tr>
+                  <tr>
+                    <th>ข้อมูลสินค้า</th>
+                  </tr>
+                  <tr>
+                    <th>&emsp;ประเภท A</th>
                   </tr>
                   <tr>
                     <td>&emsp;&emsp;จำนวน</td>
-                    <td></td>
+                    <td>2</td>
                     <td>กล่อง</td>
                     <td>&emsp;&emsp;น้ำหนัก</td>
-                    <td></td>
+                    <td>44</td>
                     <td>ก.ก.</td>
                     <tr>
-                      <th>&emsp;ประเภท C</th>
+                      <th>&emsp;ประเภท B</th>
                     </tr>
                     <tr>
                       <td>&emsp;&emsp;จำนวน</td>
-                      <td></td>
+                      <td>3</td>
                       <td>กล่อง</td>
                       <td>&emsp;&emsp;น้ำหนัก</td>
-                      <td></td>
+                      <td>9</td>
                       <td>ก.ก.</td>
-                    </tr>
-                    <tr>
-                      <th>รวมสินค้าทั้งสิน</th>
-                    </tr>
-                    <tr>
-                      <th>&emsp;&emsp;จำนวนสุทธิ</th>
-                      <td></td>
-                      <th>กล่อง</th>
-                      <th>&emsp;&emsp;น้ำหนักสุทธิ</th>
-                      <td></td>
-                      <th>ก.ก.</th>
-                    </tr>
-                    <tr></tr>
-                    <tr>
-                      <th>ราคา</th>
-                      <th></th>
-                      <th>บาท</th>
-                      <th></th>
-                      <th>วิธีการชำระเงิน</th>
-                      <th>บาท</th>
-                    </tr>
-                    <tr>
-                      <th>รหัสผู้ขนส่ง</th>
-                      <th></th>
-                      <th>ชื่อ/บริษัท</th>
-                      <th></th>
-                    </tr>
+                      <tr>
+                        <th>&emsp;ประเภท C</th>
+                      </tr>
+                      <tr>
+                        <td>&emsp;&emsp;จำนวน</td>
+                        <td>7</td>
+                        <td>กล่อง</td>
+                        <td>&emsp;&emsp;น้ำหนัก</td>
+                        <td>5</td>
+                        <td>ก.ก.</td>
+                      </tr>
+                      <tr>
+                        <th>รวมสินค้าทั้งสิน</th>
+                      </tr>
+                      <tr>
+                        <th>&emsp;&emsp;จำนวนสุทธิ</th>
+                        <td>12</td>
+                        <th>กล่อง</th>
+                        <th>&emsp;&emsp;น้ำหนักสุทธิ</th>
+                        <td>58</td>
+                        <th>ก.ก.</th>
+                      </tr>
+                      <tr></tr>
+                      <tr>
+                        <th>ราคา</th>
+                        <th>140,112</th>
+                        <th>บาท</th>
+                        <th>วิธีการชำระเงิน</th>
+                        <th>Debit</th>
+                        <th>บาท</th>
+                      </tr>
+                      <tr>
+                        <th>รหัสผู้ขนส่ง</th>
+                        <th>102</th>
+                        <th>ชื่อ/บริษัท</th>
+                        <th>Transport TH Co.,Ltd</th>
+                      </tr>
+                </tbody>
               </table>
-            <p style="margin:20px;">
-            <center>
-              <button type="button" class="btn btn-primary" style="margin:20px">พิมพ์</button>
-              <button type="button" class="btn btn-success" style="margin:20px">ตกลง</button>
-              <button type="button" class="btn btn-warning" style="margin:20px">ย้อนกลับ</button>
-              <button type="button" class="btn btn-danger" style="margin:20px">ยกเลิก</button>
-          </p>
-          </center>
-          </div>
-            </form>  
+              <p style="margin:20px;">
+                <center>
+                  <button type="button" class="btn btn-primary" style="margin:20px">พิมพ์</button>
+                  <button type="button" class="btn btn-success" style="margin:20px">ตกลง</button>
+                  <button type="button" class="btn btn-warning" style="margin:20px">ย้อนกลับ</button>
+                  <button type="button" class="btn btn-danger" style="margin:20px">ยกเลิก</button>
+              </p>
+              </center>
+            </div>
+          </form>
       </section>
       </div>
       </section>

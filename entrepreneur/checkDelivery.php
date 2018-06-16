@@ -68,7 +68,104 @@ include("../library/config.inc.php");
 
           <!-- TO DO List -->
 <div class="box box-primary">
-            Hello world
+<form action="" method="get">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="4">
+                      <h3 style="margin-bottom: 30px;">ตรวจสอบข้อมูลการส่งสินค้า</h3>
+                    </th>
+                  <tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>ข้อมูลสินค้า</th>
+                  </tr>
+                  <tr>
+                    <th>&emsp;ประเภท A</th>
+                  </tr>
+                  <tr>
+                    <td>&emsp;&emsp;จำนวน</td>
+                    <td>2</td>
+                    <td>กล่อง</td>
+                    <td>&emsp;&emsp;น้ำหนัก</td>
+                    <td>44</td>
+                    <td>ก.ก.</td>
+                    <tr>
+                      <th>&emsp;ประเภท B</th>
+                    </tr>
+                    <tr>
+                      <td>&emsp;&emsp;จำนวน</td>
+                      <td>3</td>
+                      <td>กล่อง</td>
+                      <td>&emsp;&emsp;น้ำหนัก</td>
+                      <td>9</td>
+                      <td>ก.ก.</td>
+                      <tr>
+                        <th>&emsp;ประเภท C</th>
+                      </tr>
+                      <tr>
+                        <td>&emsp;&emsp;จำนวน</td>
+                        <td>7</td>
+                        <td>กล่อง</td>
+                        <td>&emsp;&emsp;น้ำหนัก</td>
+                        <td>5</td>
+                        <td>ก.ก.</td>
+                      </tr>
+                      <tr>
+                        <th>รวมสินค้าทั้งสิน</th>
+                      </tr>
+                      <tr>
+                        <th>&emsp;&emsp;จำนวนสุทธิ</th>
+                        <td>12</td>
+                        <th>กล่อง</th>
+                        <th>&emsp;&emsp;น้ำหนักสุทธิ</th>
+                        <td>58</td>
+                        <th>ก.ก.</th>
+                      </tr>
+                  <tr>
+                    <th>ต้นทาง</th>
+                  </tr>
+                  <tr>
+                    <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
+                    <td>google Corp., Ltd.</td>
+                  </tr>
+                  <tr>
+                    <td>&emsp;ตำบล/แขวง</td>
+                    <td>ลุมพินี</td>
+                    <td>อำเภอ/เขต</td>
+                    <td>ปทุมวัน</td>
+                    <td>จังหวัด</td>
+                    <td>กรุงเทพมหานคร</td>
+                  </tr>
+                  <tr>
+                    <th>ผู้ขนส่งสินค้า</th>
+                  </tr>
+                  <tr>
+                    <td>&emsp;ชื่อผู้ขนส่ง/ชื่อบริษัทขนส่ง</td>
+                    <td>Transport TH Co.,Ltd</td>
+                  </tr>
+                  <tr>
+                    <td>&emsp;ชื่อผู้ขับรถ</td>
+                    <td>นายนวิกร  สายชล</td>
+                    <td>ทะเบียนรถ</td>
+                    <td>ฏส 1350</td>
+                    <td>สีรถ</td>
+                    <td>ขาว</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="margin:20px;">
+                <center>
+                  <button type="button" class="btn btn-primary" style="margin:20px">พิมพ์</button>
+                  <button type="button" class="btn btn-success" style="margin:20px">ตกลง</button>
+                  <button type="button" class="btn btn-warning" style="margin:20px">ย้อนกลับ</button>
+                  <button type="button" class="btn btn-danger" style="margin:20px">ยกเลิก</button>
+              </p>
+              </center>
+            </div>
+          </form>
           </div>
     </section>
   </div>

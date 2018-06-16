@@ -84,48 +84,60 @@ input {
 
         <!-- TO DO List -->
         <div class="box box-primary">
-          <?php $result = mysql_query("SELECT * FROM entrepreneur where Enter_user_ref='".$_SESSION["xuser_ref"]."'");
-  while ($row = mysql_fetch_array($result, MYSQL_BOTH)) {
-  ?>
-          <li>
-            <span class="text">
-              <?php printf ("<b>รหัสผู้ประกอบการ</b>:  %s <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ชื่อ</b>:  %s", $row[0], $row["Enter_Name"]);?>
-            </span>
-            <?php
-  }
-  mysql_free_result($result);?>
-          </li>
           <form action="" method="get">
             <div class="table-responsive">
               <table class="table">
-                <tr>
-                  <th colspan="3">
-                    <center>
-                      <h3>ข้อมูลสินค้า</h3>
-                    </center>
-                  </th>
-                </tr>
-                <tr>
-                  <th>ประเภทที่ 1</th>
-                  <th>ประเภทที่ 2</th>
-                  <th>ประเภทที่ 3</th>
-                </tr>
-                <tr>
-                  <td>จำนวน
-                    <input type="text" name="fname"> กล่อง</td>
-                  <td>จำนวน
-                    <input type="text" name="fname"> กล่อง</td>
-                  <td>จำนวน
-                    <input type="text" name="fname"> กล่อง</td>
-                </tr>
-                <tr>
-                  <td>น้ำหนัก
-                    <input type="text" name="fname"> ก.ก.</td>
-                  <td>น้ำหนัก
-                    <input type="text" name="fname"> ก.ก.</td>
-                  <td>น้ำหนัก
-                    <input type="text" name="fname"> ก.ก.</td>
-                </tr>
+                <thead>
+                  <tr>
+                    <th colspan="2" style="border-bottom:none;">
+
+                      <h3 style="margin-bottom: 30px;">สร้างใบงาน</h3>
+
+                    </th>
+                    <td align="right">
+                      <?php $result = mysql_query("SELECT * FROM entrepreneur where Enter_user_ref='".$_SESSION["xuser_ref"]."'");
+                      while ($row = mysql_fetch_array($result, MYSQL_BOTH)) {
+                      ?>
+                      <li>
+                        <span class="text">
+                          <?php printf ("<b>รหัสผู้ประกอบการ</b>:  %s <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ชื่อ</b>:  %s", $row[0], $row["Enter_Name"]);?>
+                        </span>
+                        <?php
+                        }
+                        mysql_free_result($result);?>
+                      </li>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th colspan="3">
+                      <center>
+                        <h3>ข้อมูลสินค้า</h3>
+                      </center>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>ประเภทที่ 1</th>
+                    <th>ประเภทที่ 2</th>
+                    <th>ประเภทที่ 3</th>
+                  </tr>
+                  <tr>
+                    <td>จำนวน
+                      <input type="text" name="fname"> กล่อง</td>
+                    <td>จำนวน
+                      <input type="text" name="fname"> กล่อง</td>
+                    <td>จำนวน
+                      <input type="text" name="fname"> กล่อง</td>
+                  </tr>
+                  <tr>
+                    <td>น้ำหนัก
+                      <input type="text" name="fname"> ก.ก.</td>
+                    <td>น้ำหนัก
+                      <input type="text" name="fname"> ก.ก.</td>
+                    <td>น้ำหนัก
+                      <input type="text" name="fname"> ก.ก.</td>
+                  </tr>
               </table>
               <br>
               <table class="table">
@@ -190,13 +202,17 @@ input {
                     <input type="time" name="fname">
                   </td>
                 </tr>
+                </tbody>
               </table>
             </div>
-            <br>
-            <button type="button" class="btn btn-default">ตรวจสอบใบงาน</button>
-            <button type="button" class="btn btn-default">บันทึก</button>
-            <button type="reset" class="btn btn-default" value="Reset">ล้าง</button>
-            <button type="button" class="btn btn-default">ยกเลิก</button>
+            <p style="margin:20px;">
+              <center>
+                <button type="button" class="btn btn-primary">ตรวจสอบใบงาน</button>
+                <button type="button" class="btn btn-success">บันทึก</button>
+                <button type="reset" class="btn btn-warning" value="Reset">ล้าง</button>
+                <button type="button" class="btn btn-danger">ยกเลิก</button>
+            </p>
+            </center>
           </form>
         </div>
       </section>
