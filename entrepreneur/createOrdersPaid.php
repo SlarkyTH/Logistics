@@ -79,37 +79,91 @@ include("../library/config.inc.php");
               <div class="table-responsive">
               <table class="table">
                 <tr>
-                  <td>รหัสผู้ประกอบการ</td>
-                  <td>ชื่อ</td>
-                  <td>นามสกุล</td>
+                  <td colspan="2">รหัสผู้ประกอบการ</td>
+                  <td colspan="2">ชื่อ</td>
+                  <td colspan="2">นามสกุล</td>
                 </tr>
                 <tr>
                 <th>ต้นทาง</th>
                 </tr>
                 <tr>
-                <td>ชื่อผู้ส่ง/ชื่อบริษัท</td>
+                <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
                 </tr>
                 <tr>
-                <td>ตำบล/แขวง</td>
-                <td>อำเภอ/เขต</td>
-                <td>จังหวัด</td>
+                <td colspan="2">&emsp;ตำบล/แขวง</td>
+                <td colspan="2">อำเภอ/เขต</td>
+                <td colspan="2">จังหวัด</td>
                 </tr>
                 <tr>
                 <th>ปลายทาง</th>
                 </tr>
                 <tr>
-                <td>ชื่อผู้ส่ง/ชื่อบริษัท</td>
+                <td>&emsp;ชื่อผู้ส่ง/ชื่อบริษัท</td>
                 </tr>
                 <tr>
-                <td>ตำบล/แขวง</td>
-                <td>อำเภอ/เขต</td>
-                <td>จังหวัด</td>
+                <td colspan="2">&emsp;ตำบล/แขวง</td>
+                <td colspan="2">อำเภอ/เขต</td>
+                <td colspan="2">จังหวัด</td>
                 </tr>
                 <tr>
                 <th>ข้อมูลสินค้า</th>
                 </tr>
                 <tr>
-                <th>ประเภท A</th>
+                <th>&emsp;ประเภท A</th>
+                </tr>
+                <tr>
+                <td>&emsp;&emsp;จำนวน</td>
+                <td></td>
+                <td>กล่อง</td>
+                <td>&emsp;&emsp;น้ำหนัก</td>
+                <td></td>
+                <td>ก.ก.</td>
+                <tr>
+                <th>&emsp;ประเภท B</th>
+                </tr>
+                <tr>
+                <td>&emsp;&emsp;จำนวน</td>
+                <td></td>
+                <td>กล่อง</td>
+                <td>&emsp;&emsp;น้ำหนัก</td>
+                <td></td>
+                <td>ก.ก.</td>
+                <tr>
+                <th>&emsp;ประเภท C</th>
+                </tr>
+                <tr>
+                <td>&emsp;&emsp;จำนวน</td>
+                <td></td>
+                <td>กล่อง</td>
+                <td>&emsp;&emsp;น้ำหนัก</td>
+                <td></td>
+                <td>ก.ก.</td>
+                </tr>
+                <tr>
+                <th>รวมสินค้าทั้งสิน</th>
+                </tr>
+                <tr>
+                <th>&emsp;&emsp;จำนวนสุทธิ</th>
+                <td></td>
+                <th>กล่อง</th>
+                <th>&emsp;&emsp;น้ำหนักสุทธิ</th>
+                <td></td>
+                <th>ก.ก.</th>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <th>ราคา</th>
+                  <th></th>
+                  <th>บาท</th>
+                  <th></th>
+                  <th>วิธีการชำระเงิน</th>
+                  <th>บาท</th>
+                </tr>
+                <tr>
+                  <th>รหัสผู้ขนส่ง</th>
+                  <th></th>
+                  <th>ชื่อ/บริษัท</th>
+                  <th></th>
                 </tr>
               </table>
           </div>
