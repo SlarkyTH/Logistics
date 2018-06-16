@@ -82,7 +82,7 @@ include("../library/config.inc.php");
         <!-- TO DO List -->
         <div class="box box-primary">
           <div class="container text-center">
-            <div class="row" style="margin:30px;">
+            <div class="row" style="margin:60px;">
               <center>
                 <button type="button" class="btn btn-twitter btn-lg btn-block">รายงานข้อมูลผู้ประกอบการ</button>
                 <button type="button" class="btn btn-vk btn-lg btn-block">รายงานข้อมูลลูกค้า</button>
