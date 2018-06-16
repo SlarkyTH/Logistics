@@ -94,8 +94,8 @@ include("../library/config.inc.php");
 
         });
         markers.push(marker);
-        if (statusclick == 'start') $("#start").val(event.latLng.lat() + "," + event.latLng.lng())
-        else $("#end").val(event.latLng.lat() + "," + event.latLng.lng())
+        if (statusclick == 'end') $("#end").val(event.latLng.lat() + "," + event.latLng.lng())
+        else $("#start").val(event.latLng.lat() + "," + event.latLng.lng())
 
       });
       directionsDisplay.setMap(map);
@@ -127,7 +127,7 @@ include("../library/config.inc.php");
     }
 
     function calcRoute() {
-
+      deleteMarkers()
       var start = document.getElementById("start").value;
       var end = document.getElementById("end").value;
       var distanceInput = document.getElementById("distance");
