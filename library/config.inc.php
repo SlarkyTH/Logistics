@@ -4,7 +4,7 @@
 	
 	$_config['database']['hostname'] = "localhost";
 	$_config['database']['username'] = "root";
-	$_config['database']['password'] = "qwertyqwerty";
+	$_config['database']['password'] = "password";
 	$_config['database']['database'] = "logistic";
 	
 	# connect the database server
