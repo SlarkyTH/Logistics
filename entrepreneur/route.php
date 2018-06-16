@@ -199,8 +199,6 @@ include("../library/config.inc.php");
               </p>
             </div>
             <div id="map_canvas"></div>
-
-
           </div>
           <!-- /.box-header -->
           <!-- /.box-body -->
