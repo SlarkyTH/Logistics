@@ -5,10 +5,10 @@ include("library/config.inc.php");
 if(isset($_POST["submit"])){
 	$rs=mysql_fetch_object(mysql_query("select * from login where log_user='".$_POST["user"]."' and log_passwd='".$_POST["passwd"]."'"));
  
-
   if($rs->log_user != "") {
 		$_SESSION["xuser"]=$rs->log_user;
-		$_SESSION["xuser_ref"]=$rs->log_user_ref;
+    $_SESSION["xuser_ref"]=$rs->log_user_ref;
+    $_SESSION['logged'] = true;
 		
 		if($rs->log_user_type == "entrepreneur") { header("location:entrepreneur/index.php"); }
 		if($rs->log_user_type == "sender") { header("location:sender/index.php"); }
@@ -47,7 +47,6 @@ if(isset($_POST["submit"])){
         <li class="breadcrumb-item"><a href="register_ent.php">Become Entrepreneur</a></li>
         <li class="breadcrumb-item"><a href="register_sen.php">Become Sender</a></li>
         <li class="breadcrumb-item"><a href="register_cus.php">Become Customer</a></li>
-        <li class="breadcrumb-item"><a href="#">Track And Trace</a></li>
       </ol>
     </nav>
 

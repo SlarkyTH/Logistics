@@ -1,6 +1,6 @@
 <?php   
 session_start(); 
 session_destroy();
-header("location: /logistic/index.php");
+header("location: /logistics/index.php");
 exit();
 ?>

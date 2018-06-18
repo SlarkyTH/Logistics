@@ -2,6 +2,10 @@
 include("../library/class.mysqldb.php");
 include("../library/config.inc.php");
 ?>
+<?php
+session_start();
+if(!isset($_SESSION['logged'])) header("location: /logistics/index.php");
+?>
 <!DOCTYPE html>
 <html>
 
