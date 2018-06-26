@@ -37,6 +37,7 @@
               <li><a href="createTask.php">สร้างใบงาน</a></li>
               <li><a href="createOrdersPaid.php">ออกใบสั่งจ้าง</a></li>
               <li><a href="checkDelivery.php">ตรวจสอบข้อมูลการส่งสินค้า</a></li>
+              <li><a href="request.php">ร้องขอผู้ส่ง</a></li>
             </ul>
             <li><a href="route.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;จัดการเส้นทาง</span></a></li>
             <li><a href="fuelResources.php"><i class="fa fa-tint"></i><span>&nbsp;&nbsp;จัดการทรัพยากรเชื้อเพลิง</span></a></li>

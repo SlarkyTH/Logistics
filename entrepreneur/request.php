@@ -57,8 +57,7 @@ include("../library/config.inc.php");
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-      Request And Seek Sender</h1>
+      <h1>Request And Seek Sender</h1>
     </section>
 
     <!-- Main content -->
@@ -70,14 +69,13 @@ include("../library/config.inc.php");
           <!-- TO DO List -->
 <div class="box box-primary">
             <div class="box-header">
-            
-              
-              <form name="form1" method="post" action="" class="form-inline">
+            <form name="form1" method="post" action="" class="form-inline">
               <div class="form-group">
+                <h3 style="margin-bottom: 30px;">ร้องขอผู้ส่ง</h3>
                 <i class="ion ion-android-locate"></i> &nbsp;<label for="textfield">Destination</label>
                 
                 <input type="text" name="textfield" id="textfield" class="form-control" placeholder="ใส่จังหวัดที่ต้องการส่ง">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default">ค้นหา</button>
                 </div>
               </form>
               <h3 class="box-title">&nbsp;</h3>
@@ -88,7 +86,7 @@ include("../library/config.inc.php");
                 while ($row = mysql_fetch_array($result, MYSQL_BOTH)) {
                   ?><div class="col-lg-4">
                 	<div class="thumbnail"><img src="imgs/e57e5a4b502198e6ff6ab617fe046546.jpg" class="img-responsive">
-                  <div class="caption"><h3><?php printf ("Color : %s <br> Car License: %s <br> Color : %s", $row["sen_name"], $row["sen_company"]);?></h3><br><center><p><a href="#" class="btn btn-primary" role="button">Request</a></center></p></div></div></div><?php
+                  <div class="caption"><h3><?php printf ("สี : %s <br>ทะเบียน: %s", $row["Car_Color"], $row["Car_License"]);?></h3><br><center><p><a href="#" class="btn btn-primary" role="button">ร้องขอ</a> <a href="#" class="btn btn-danger" role="button">ยกเลิก</a></center></p></div></div></div><?php
                 }
                 mysql_free_result($result);?>
              	<!-- <div class="col-lg-4">
