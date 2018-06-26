@@ -50,6 +50,9 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/index.php");
     .table>tbody>tr>td {
       border-top: none;
     }
+    .container{
+      width:auto;
+    }
   </style>
 </head>
 
@@ -68,7 +71,7 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/index.php");
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>Fuel Resources</h1>
+        <h1>จัดการทรัพยากรเชื้อเพลิง</h1>
       </section>
 
       <!-- Main content -->
@@ -82,57 +85,58 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/index.php");
         <!-- TO DO List -->
         <div class="box box-primary">
           <form action="" method="get">
-            <label for="date" style="margin: 20px;">วัน / เดือน / ปี </label>
-            <input type="date" name="" id="">
+          
             <div class="container">
-
-              <table class="table">
+            <p style="padding-left:15%;padding-top:5%">วัน / เดือน / ปี
+            <input type="date" name="" id="">
+            <center>
+              <table class="table" style="border:none;width:40%;" >
                 <thead>
                   <tr>
-                    <th colspan="4" style="border-bottom: none">
-                      <center>
-                        <h3 style="margin-bottom: 30px;">ข้อมูลเชื้อเพลิง</h3>
-                      </center>
+                    <th style="border-bottom: none">                      
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>ประเภทของเชื้อเพลิง</td>
+                    <td>ทะเบียนรถ</td>
                     <td>
-                      <input type="text" name="typefuel" id="typefuel">
-                    </td>
-                    <td>เลขไมล์ต้นทาง</td>
-                    <td>
-                      <input type="text" name="milestart" id="milestart">
+                      <input type="text" name="licenseplate" id="licenseplate">
                     </td>
                   </tr>
                   <tr>
                     <td>ค่าเชื้อเพลิง</td>
                     <td>
-                      <input type="text" name="fuelprice" id="fuelprice">
-                    </td>
-                    <td>เลขไมล์ปลายทาง</td>
+                      <input type="text" name="fuel" id="fuel">
+                    </td>                    
+                  </tr>
+                  <tr>
+                    <td>ราคาเชื้อเพลิง / ลิตร</td>
                     <td>
-                      <input type="text" name="mileend" id="mileend">
+                      <input type="text" name="fuelprice" id="fuelprice">
                     </td>
                   </tr>
                   <tr>
-                    <td>ค่าเชื้อเพลิงสุทธิ</td>
+                  <td>เลขไมล์ต้นทาง</td>
                     <td>
-                      <input type="text" name="totalprice" id="totalprice">
+                      <input type="text" name="milestart" id="milestart">
                     </td>
-
                   </tr>
+                  <tr>
+                  <td>เลขไมล์ปลายทาง</td>
+                    <td>
+                      <input type="text" name="mileend" id="mileend">
+                    </td></tr>
                 </tbody>
               </table>
-              <center>
+              
                 <p style="margin:20px;padding:20px;">
                   <button type="button" class="btn btn-success left" style="margin-right:10px">ตกลง</button>
 
                   <button type="button" class="btn btn-danger" style="margin-left:10px">ยกเลิก</button>
-              </center>
+              
               </p>
+              </center>
             </div>
           </form>
         </div>
