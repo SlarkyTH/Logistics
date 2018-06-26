@@ -3,7 +3,7 @@ include("library/class.mysqldb.php");
 include("library/config.inc.php");
 if(isset($_POST["submit"])){
 	$user_ref=rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
-	mysql_query("INSERT INTO `Cus_id` (
+	mysql_query("INSERT INTO `customer` (
 	`Cus_Id`, 
 	`Cus_Name`, 
 	`Cus_Address`, 
@@ -74,6 +74,20 @@ if(isset($_POST["submit"])){
         <p class="lead">Register the form to be Customer.</p>
         <p class="lead">
         <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+            <div class="form-group row">
+              <label for="example-text-input" class="col-2 col-form-label">Username:</label>
+              <div class="col-10">
+                <input class="form-control form-control-lg" type="text" id="example-text-input" placeholder="Username" name="user" required>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Password:</label>
+              <div class="col-10">
+                <input class="form-control form-control-lg" type="password" id="example-password-input" placeholder="Password" name="passwd" required>
+              </div>
+            </div>
+
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Full Name:</label>
               <div class="col-10">
