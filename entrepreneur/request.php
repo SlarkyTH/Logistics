@@ -86,7 +86,7 @@ include("../library/config.inc.php");
                 while ($row = mysql_fetch_array($result, MYSQL_BOTH)) {
                   ?><div class="col-lg-4">
                 	<div class="thumbnail"><img src="imgs/e57e5a4b502198e6ff6ab617fe046546.jpg" class="img-responsive">
-                  <div class="caption"><h3><?php printf ("สี : %s <br>ทะเบียน: %s", $row["Car_Color"], $row["Car_License"]);?></h3><br><center><p><a href="#" class="btn btn-primary" role="button">ร้องขอ</a> <a href="#" class="btn btn-danger" role="button">ยกเลิก</a></center></p></div></div></div><?php
+                  <div class="caption"><h3><?php printf ("สี : %s <br>ทะเบียน: %s", $row["Car_Color"], $row["Car_License"]);?></h3><br><center><p><a href="chat.php" class="btn btn-primary" role="button">ร้องขอ</a> <a href="#" class="btn btn-danger" role="button">ยกเลิก</a></center></p></div></div></div><?php
                 }
                 mysql_free_result($result);?>
              	<!-- <div class="col-lg-4">
