@@ -11,7 +11,7 @@
         <span class="sr-only">Toggle navigation</span>
       </a>
 
-      <div class="navbar-custom-menu">
+      <div class="navbar-custom-menu" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
         <ul class="nav navbar-nav">
          
           <!-- User Account: style can be found in dropdown.less -->
