@@ -85,20 +85,20 @@ if(isset($_POST["submit"])){
         <div class="wrapper">
 
             <header class="main-header">
-                <!-- Logo -->
-                <a href="#" class="logo">
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg">
-                        <strong>Entrepreneur</strong> Zone</span>
-                </a>
-                <!-- Header Navbar: style can be found in header.less -->
-                <nav class="navbar navbar-static-top">
-                    <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                        <span class="sr-only">Toggle navigation</span>
-                    </a>
-                </nav>
-            </header>
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg">
+            <strong>Entrepreneur</strong> Zone</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" style="padding:0;">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" style="width:40px;">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+        </nav>
+      </header>
 
 
             <!-- Left side column. contains the logo and sidebar -->
@@ -108,8 +108,7 @@ if(isset($_POST["submit"])){
                     <!-- Sidebar user panel -->
 
                     <ul class="sidebar-menu" data-widget="tree">
-                        <li class="header"></li>
-                        <!-- <li class="header">MAIN NAVIGATION</li> -->
+                        
 
                         <li>
                             <a href="entrepreneur/home.php">

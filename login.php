@@ -92,9 +92,9 @@ if(isset($_POST["submit"])){
             <strong>Entrepreneur</strong> Zone</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
+        <nav class="navbar navbar-static-top" style="padding:0;">
           <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" style="width:40px;">
             <span class="sr-only">Toggle navigation</span>
           </a>
         </nav>
@@ -108,9 +108,7 @@ if(isset($_POST["submit"])){
           <!-- Sidebar user panel -->
 
           <ul class="sidebar-menu" data-widget="tree">
-            <li class="header"></li>
-            <!-- <li class="header">MAIN NAVIGATION</li> -->
-
+            
             <li>
               <a href="entrepreneur/home.php">
                 <i class="fa fa-desktop"></i>

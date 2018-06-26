@@ -1,7 +1,7 @@
 <section class="sidebar">
       <!-- Sidebar user panel -->
       
-      <div class="user-panel" style = width: auto;>
+      <div class="user-panel" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
         <div class="pull-left info">
           <p><?php $rs=mysql_fetch_object(mysql_query("select * from entrepreneur where Enter_user_ref='".$_SESSION["xuser_ref"]."'")); echo $rs->Enter_Name; ?></p>
           <li><i class="fa fa-circle text-success"></i> Online</li>
@@ -9,7 +9,7 @@
         <br><br>
       </div>
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header"></li>
+        <li class="header" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>></li>
         <!-- <li class="header">MAIN NAVIGATION</li> -->
 
         <li>
@@ -103,12 +103,27 @@
           </a>
         </li>
          -->
-        <li>
+        <li <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
           <a href="logout.php">
             <i class="fa fa-sign-out"></i> 
             <span>ออกจากระบบ</span>
           </a>
         </li>
+        <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+              <a href="../login.php">
+                <i class="fa fa-user"></i>
+                <span>เข้าสู่ระบบ
+                </span>
+              </a>
+            </li>
+
+            <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+              <a href="../register_all.php">
+                <i class="fa fa-user"></i>
+                <span>สมัครสมาชิก
+                </span>
+              </a>
+            </li>
         <!-- <li><a href="#">จัดการชำระเงิน</a></li>
         <li><a href="#">จัดส่งข้อความ</a></li>
         <li><a href="#">สถิติ</a></li>
