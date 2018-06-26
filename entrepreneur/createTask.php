@@ -4,7 +4,8 @@ include("../library/config.inc.php");
 ?>
 <?php
 session_start();
-if(!isset($_SESSION['logged'])) header("location: /logistics/index.php");
+if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
+
 ?>
   <!DOCTYPE html>
   <html>
