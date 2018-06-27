@@ -27,16 +27,16 @@
         </li>
         <li>
         </li>
-        <li>
-          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"> <i class="fa fa-list"></i>&nbsp;&nbsp;บริการ</a>
+        <li class = "service">
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" id="clickservice"> <i class="fa fa-list"></i>&nbsp;&nbsp;<span>บริการ</span</a>
           <ul class="collapse" id="homeSubmenu">
           <li  data-toggle="collapse" data-target="#products" class="collapsed active">
             <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>&nbsp;จัดการการขนส่ง</span></a>
           </li>
-            <ul class="sub-menu collapse" id="products">
-              <li><a href="createTask.php">สร้างใบงาน</a></li>
-              <li><a href="createOrdersPaid.php">ออกใบสั่งจ้าง</a></li>
-              <li><a href="checkDelivery.php">ตรวจสอบข้อมูลการส่งสินค้า</a></li>
+            <ul class="sub-menu collapse" id="products" style="padding-left:25px;">
+              <li><a href="createTask.php"><span>สร้างใบงาน</span></a></li>
+              <li><a href="createOrdersPaid.php"><span>ออกใบสั่งจ้าง</span></a></li>
+              <li><a href="checkDelivery.php"><span>ตรวจสอบข้อมูลการส่งสินค้า</span></a></li>
             </ul>
             <li><a href="route.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;จัดการเส้นทาง</span></a></li>
             <li><a href="fuelResources.php"><i class="fa fa-tint"></i><span>&nbsp;&nbsp;จัดการทรัพยากรเชื้อเพลิง</span></a></li>
@@ -46,7 +46,7 @@
             <li><a href="statistic.php"><i class="fa fa-bar-chart"></i><span>&nbsp;&nbsp;สถิติ</span></a></li>
             <li><a href="report.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;พิมพ์รายงาน</span></a></li>
           </ul>
-          </li>
+        </li>
         
         <li>
           <a href="news.php">
@@ -130,3 +130,43 @@
         <li><a href="report.php">พิมพ์รายงาน</a></li> -->
       </ul>
     </section>
+    <style>
+    #products{    
+    width: 190px;
+    padding-top: 5px;
+    padding-bottom:5px;    
+    padding-left: 10px;
+    }
+    #products>li{
+      padding-top: 8px;
+    }
+    .service>ul>li{
+      padding-top:10px;
+    }
+    </style>
+        <script src="plugins/jQuery/jquery-3.1.1.min.js"></script>
+
+    <script>
+    var togglestatus = false
+    $(document).ready(function(){
+      $('#Toggle').click(function(){
+        togglestatus=!togglestatus        
+        if($('#clickservice').attr("aria-expanded")==="true") {
+          
+          $('#clickservice').click();                
+        }     
+      });
+      $('#clickservice').click(function(){
+        if($('#clickservice').attr("aria-expanded")==="false" && togglestatus == true) {
+          $('#Toggle').click()            
+        }
+        else if($('#clickservice').attr("aria-expanded")==="true" && togglestatus == true){
+          $('#clickservice').click
+          $('#Toggle').click()
+        }
+        
+      });
+    });
+      
+    </script>
+    
