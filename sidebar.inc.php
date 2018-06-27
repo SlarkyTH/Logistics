@@ -13,14 +13,14 @@
         <!-- <li class="header">MAIN NAVIGATION</li> -->
 
         <li>
-          <a href="home.php">
+          <a href="entrepreneur/home.php">
             <i class="fa fa-desktop"></i> 
             <span>หน้าหลัก</span>
           </a>
         </li>
 
         <li>
-          <a href="logistic.php">
+          <a href="entrepreneur/logistic.php">
             <i class="fa fa-truck"></i> 
             <span>ข้อมูลโลจิสติกส์</span>
           </a>
@@ -34,30 +34,30 @@
             <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>&nbsp;จัดการการขนส่ง</span></a>
           </li>
             <ul class="sub-menu collapse" id="products">
-              <li><a href="createTask.php">สร้างใบงาน</a></li>
-              <li><a href="createOrdersPaid.php">ออกใบสั่งจ้าง</a></li>
-              <li><a href="checkDelivery.php">ตรวจสอบข้อมูลการส่งสินค้า</a></li>
-              <li><a href="request.php">ร้องขอผู้ส่ง</a></li>
+              <li><a href="entrepreneur/createTask.php">สร้างใบงาน</a></li>
+              <li><a href="entrepreneur/createOrdersPaid.php">ออกใบสั่งจ้าง</a></li>
+              <li><a href="entrepreneur/checkDelivery.php">ตรวจสอบข้อมูลการส่งสินค้า</a></li>
+              <li><a href="entrepreneur/request.php">ร้องขอผู้ส่ง</a></li>
             </ul>
-            <li><a href="route.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;จัดการเส้นทาง</span></a></li>
-            <li><a href="fuelResources.php"><i class="fa fa-tint"></i><span>&nbsp;&nbsp;จัดการทรัพยากรเชื้อเพลิง</span></a></li>
-            <li><a href="managementAccounting.php"><i class="fa fa-user"></i><span>&nbsp;&nbsp;จัดการทางบัญชี</span></a></li>
-            <li><a href="checkPayments.php"><i class="fa fa-dollar"></i><span>&nbsp;&nbsp;ตรวจสอบการชำระเงิน</span></a></li>
-            <li><a href="message.php"><i class="fa fa-comments"></i><span>&nbsp;&nbsp;จัดส่งข้อความ</span></a></li>
-            <li><a href="statistic.php"><i class="fa fa-bar-chart"></i><span>&nbsp;&nbsp;สถิติ</span></a></li>
-            <li><a href="report.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;พิมพ์รายงาน</span></a></li>
+            <li><a href="entrepreneur/route.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;จัดการเส้นทาง</span></a></li>
+            <li><a href="entrepreneur/fuelResources.php"><i class="fa fa-tint"></i><span>&nbsp;&nbsp;จัดการทรัพยากรเชื้อเพลิง</span></a></li>
+            <li><a href="entrepreneur/managementAccounting.php"><i class="fa fa-user"></i><span>&nbsp;&nbsp;จัดการทางบัญชี</span></a></li>
+            <li><a href="entrepreneur/checkPayments.php"><i class="fa fa-dollar"></i><span>&nbsp;&nbsp;ตรวจสอบการชำระเงิน</span></a></li>
+            <li><a href="entrepreneur/message.php"><i class="fa fa-comments"></i><span>&nbsp;&nbsp;จัดส่งข้อความ</span></a></li>
+            <li><a href="entrepreneur/statistic.php"><i class="fa fa-bar-chart"></i><span>&nbsp;&nbsp;สถิติ</span></a></li>
+            <li><a href="entrepreneur/report.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;พิมพ์รายงาน</span></a></li>
           </ul>
         </li>
         
         <li>
-          <a href="news.php">
+          <a href="entrepreneur/news.php">
             <i class="fa fa-bullhorn"></i> 
             <span>ข่าวสารและกิจกรรม</span>
           </a>
         </li>
 
         <li>
-          <a href="contact.php">
+          <a href="entrepreneur/contact.php">
             <i class="fa fa-paper-plane"></i> 
             <span>ติดต่อเรา</span>
           </a>
@@ -105,13 +105,13 @@
         </li>
          -->
         <li <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
-          <a href="logout.php">
+          <a href="entrepreneur/logout.php">
             <i class="fa fa-sign-out"></i> 
             <span>ออกจากระบบ</span>
           </a>
         </li>
         <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
-              <a href="../login.php">
+              <a href="login.php">
                 <i class="fa fa-user"></i>
                 <span>เข้าสู่ระบบ
                 </span>
@@ -119,7 +119,7 @@
             </li>
 
             <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
-              <a href="../register_all.php">
+              <a href="register_all.php">
                 <i class="fa fa-user"></i>
                 <span>สมัครสมาชิก
                 </span>
@@ -145,7 +145,7 @@
       padding-top:10px;
     }
     </style>
-        <script src="plugins/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="entrepreneur/plugins/jQuery/jquery-3.1.1.min.js"></script>
 
     <script>
     var togglestatus = false

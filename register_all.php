@@ -79,6 +79,20 @@ if(isset($_POST["submit"])){
 
 
     </head>
+    <style>
+    #products{    
+    width: 190px;
+    padding-top: 5px;
+    padding-bottom:5px;    
+    padding-left: 10px;
+    }
+    #products>li{
+      padding-top: 8px;
+    }
+    .service>ul>li{
+      padding-top:10px;
+    }
+    </style>
 
 
     <body class="hold-transition skin-blue sidebar-mini" style="font: 'Kanit', sans-serif;">
@@ -94,7 +108,7 @@ if(isset($_POST["submit"])){
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" style="padding:0;">
           <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" style="width:40px;">
+          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" style="width:40px;" id="Toggle">
             <span class="sr-only">Toggle navigation</span>
           </a>
         </nav>
@@ -125,8 +139,8 @@ if(isset($_POST["submit"])){
                         </li>
                         <li>
                         </li>
-                        <li>
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <li class="service">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" id="clickservice">
                                 <i class="fa fa-list"></i>&nbsp;&nbsp;บริการ</a>
                             <ul class="collapse" id="homeSubmenu">
                                 <li data-toggle="collapse" data-target="#products" class="collapsed active">
@@ -145,6 +159,7 @@ if(isset($_POST["submit"])){
                                     <li>
                                         <a href="entrepreneur/checkDelivery.php">ตรวจสอบข้อมูลการส่งสินค้า</a>
                                     </li>
+                                    <li><a href="entrepreneur/request.php">ร้องขอผู้ส่ง</a></li>
                                 </ul>
                                 <li>
                                     <a href="entrepreneur/route.php">
@@ -309,5 +324,28 @@ if(isset($_POST["submit"])){
         <script src="entrepreneur/dist/js/demo.js"></script>
     </body>
 
+<script>
+    var togglestatus = false
+    $(document).ready(function(){
+      $('#Toggle').click(function(){
+        togglestatus=!togglestatus        
+        if($('#clickservice').attr("aria-expanded")==="true") {
+          
+          $('#clickservice').click();                
+        }     
+      });
+      $('#clickservice').click(function(){
+        if($('#clickservice').attr("aria-expanded")==="false" && togglestatus == true) {
+          $('#Toggle').click()            
+        }
+        else if($('#clickservice').attr("aria-expanded")==="true" && togglestatus == true){
+          $('#clickservice').click
+          $('#Toggle').click()
+        }
+        
+      });
+    });
+      
+    </script>
 
     </html>

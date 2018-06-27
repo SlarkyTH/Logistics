@@ -68,6 +68,8 @@ if(isset($_POST["submit"])){
 
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 
+    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -79,149 +81,14 @@ if(isset($_POST["submit"])){
 
 
   </head>
-
-
   <body class="hold-transition skin-blue sidebar-mini" style="font: 'Kanit', sans-serif;">
     <div class="wrapper">
 
-      <header class="main-header">
-        <!-- Logo -->
-        <a href="#" class="logo">
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">
-            <strong>Entrepreneur</strong> Zone</span>
-        </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" style="padding:0;">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" style="width:40px;">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
-        </nav>
-      </header>
-
-
+   <?php include("header.inc.php"); ?>
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- Sidebar user panel -->
-
-          <ul class="sidebar-menu" data-widget="tree">
-            
-            <li>
-              <a href="entrepreneur/home.php">
-                <i class="fa fa-desktop"></i>
-                <span>หน้าหลัก</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="entrepreneur/logistic.php">
-                <i class="fa fa-truck"></i>
-                <span>ข้อมูลโลจิสติกส์</span>
-              </a>
-            </li>
-            <li>
-            </li>
-            <li>
-              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                <i class="fa fa-list"></i>&nbsp;&nbsp;บริการ</a>
-              <ul class="collapse" id="homeSubmenu">
-                <li data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#">
-                    <i class="glyphicon glyphicon-tasks"></i>
-                    <span>&nbsp;จัดการการขนส่ง</span>
-                  </a>
-                </li>
-                <ul class="sub-menu collapse" id="products">
-                  <li>
-                    <a href="entrepreneur/createTask.php">สร้างใบงาน</a>
-                  </li>
-                  <li>
-                    <a href="entrepreneur/createOrdersPaid.php">ออกใบสั่งจ้าง</a>
-                  </li>
-                  <li>
-                    <a href="entrepreneur/checkDelivery.php">ตรวจสอบข้อมูลการส่งสินค้า</a>
-                  </li>
-                </ul>
-                <li>
-                  <a href="entrepreneur/route.php">
-                    <i class="fa fa-rocket"></i>
-                    <span>&nbsp;&nbsp;จัดการเส้นทาง</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="entrepreneur/fuelResources.php">
-                    <i class="fa fa-tint"></i>
-                    <span>&nbsp;&nbsp;จัดการทรัพยากรเชื้อเพลิง</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="entrepreneur/managementAccounting.php">
-                    <i class="fa fa-user"></i>
-                    <span>&nbsp;&nbsp;จัดการทางบัญชี</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="entrepreneur/checkPayments.php">
-                    <i class="fa fa-dollar"></i>
-                    <span>&nbsp;&nbsp;ตรวจสอบการชำระเงิน</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="entrepreneur/message.php">
-                    <i class="fa fa-comments"></i>
-                    <span>&nbsp;&nbsp;จัดส่งข้อความ</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="entrepreneur/statistic.php">
-                    <i class="fa fa-bar-chart"></i>
-                    <span>&nbsp;&nbsp;สถิติ</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="entrepreneur/report.php">
-                    <i class="fa fa-rocket"></i>
-                    <span>&nbsp;&nbsp;พิมพ์รายงาน</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="entrepreneur/news.php">
-                <i class="fa fa-bullhorn"></i>
-                <span>ข่าวสารและกิจกรรม</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="entrepreneur/contact.php">
-                <i class="fa fa-paper-plane"></i>
-                <span>ติดต่อเรา</span>
-              </a>
-            </li>
-
-            <li>
-              <a href="login.php">
-                <i class="fa fa-user"></i>
-                <span>เข้าสู่ระบบ
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a href="register_all.php">
-                <i class="fa fa-user"></i>
-                <span>สมัครสมาชิก
-                </span>
-              </a>
-            </li>
-          </ul>
-        </section>
-
+        <?php include("sidebar.inc.php"); ?>
 
         <!-- /.sidebar -->
       </aside>
@@ -327,7 +194,5 @@ if(isset($_POST["submit"])){
     <!-- AdminLTE for demo purposes -->
     <script src="entrepreneur/dist/js/demo.js"></script>
   </body>
-
-  
 
   </html>
