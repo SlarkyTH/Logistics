@@ -33,10 +33,18 @@
           <li  data-toggle="collapse" data-target="#products" class="collapsed active">
             <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>&nbsp;จัดการการขนส่ง</span></a>
           </li>
+<<<<<<< HEAD
             <ul class="sub-menu collapse" id="products" style="padding-left:25px;">
               <li><a href="createTask.php"><span>สร้างใบงาน</span></a></li>
               <li><a href="createOrdersPaid.php"><span>ออกใบสั่งจ้าง</span></a></li>
               <li><a href="checkDelivery.php"><span>ตรวจสอบข้อมูลการส่งสินค้า</span></a></li>
+=======
+            <ul class="sub-menu collapse" id="products">
+              <li><a href="createTask.php">สร้างใบงาน</a></li>
+              <li><a href="createOrdersPaid.php">ออกใบสั่งจ้าง</a></li>
+              <li><a href="checkDelivery.php">ตรวจสอบข้อมูลการส่งสินค้า</a></li>
+              <li><a href="request.php">ร้องขอผู้ส่ง</a></li>
+>>>>>>> 4495fe2fa2157c65c0e8de364393caba027bea1b
             </ul>
             <li><a href="route.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;จัดการเส้นทาง</span></a></li>
             <li><a href="fuelResources.php"><i class="fa fa-tint"></i><span>&nbsp;&nbsp;จัดการทรัพยากรเชื้อเพลิง</span></a></li>

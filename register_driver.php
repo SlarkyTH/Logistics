@@ -13,10 +13,8 @@ if(isset($_POST["submit"])){
 	`Driver_Allowed`, 
   `Driver_Expired`,
 	`Driver_Startwork`, 
-
   	) VALUES (
-	NULL, 
-	'".$_POST["Driver_Id"]."', 
+	NULL,
 	'".$_POST["Driver_Name"]."', 
 	'".$_POST["Driver_Lastname"]."', 
 	'".$_POST["Driver_Nickname"]."', 
@@ -27,9 +25,6 @@ if(isset($_POST["submit"])){
   '".$_POST["Driver_Startwork"]."', 
 	'".$user_ref."'
 	);");
-	
-	mysql_query("INSERT INTO `login` (`log_id`, `log_user`, `log_passwd`, `log_user_ref`, `log_user_type`) VALUES (NULL, '".$_POST["user"]."', '".$_POST["passwd"]."', '".$user_ref."', 'driver');");
-	
 	header("location:index.php");
 }
 ?>
