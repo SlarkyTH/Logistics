@@ -7,7 +7,7 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" style="padding:0px;">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" id="Toggle">
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" id="Toggle" style="width: 45px;">
         <span class="sr-only">Toggle navigation</span>
       </a>
 
