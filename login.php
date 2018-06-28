@@ -9,17 +9,15 @@ if(isset($_POST["submit"])){
 		$_SESSION["xuser"]=$rs->log_user;
     $_SESSION["xuser_ref"]=$rs->log_user_ref;
     $_SESSION['logged'] = true;
-		
+    
 		if($rs->log_user_type == "entrepreneur") { header("location:entrepreneur/index.php"); }
-		if($rs->log_user_type == "sender") { header("location:sender/index.php"); }
+    if($rs->log_user_type == "sender") { header("location:sender/index.php"); }
+    if($rs->log_user_type == "customer") { header("location:customer/index.php"); }
 	}
 }
-
-
 ?>
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html lang="en">
-
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

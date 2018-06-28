@@ -2,6 +2,8 @@
 include("library/class.mysqldb.php");
 include("library/config.inc.php");
 if(isset($_POST["submit"])){
+  $rs=mysql_fetch_object(mysql_query("select * from sender where sen_user_ref='".$_SESSION["xuser_ref"]."'"));
+  $id = $rs->sen_id;
 	$user_ref=rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
 	mysql_query("INSERT INTO `driver` (
 	`Driver_Id`, 
@@ -11,19 +13,20 @@ if(isset($_POST["submit"])){
 	`Driver_Birthday`, 
 	`Driver_License`, 
 	`Driver_Allowed`, 
-  `Driver_Expired`,
+	`Driver_Expired`, 
 	`Driver_Startwork`, 
-  	) VALUES (
-	NULL,
+	`Enter_Id`
+	) VALUES (
+	NULL, 
 	'".$_POST["Driver_Name"]."', 
 	'".$_POST["Driver_Lastname"]."', 
 	'".$_POST["Driver_Nickname"]."', 
 	'".$_POST["Driver_Birthday"]."', 
 	'".$_POST["Driver_License"]."', 
 	'".$_POST["Driver_Allowed"]."', 
-  '".$_POST["Driver_Expired"]."', 
+	'".$_POST["Driver_Expired"]."', 
   '".$_POST["Driver_Startwork"]."', 
-	'".$user_ref."'
+  $id
 	);");
 	header("location:index.php");
 }
@@ -66,28 +69,28 @@ if(isset($_POST["submit"])){
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">ชื่อ:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-fullname-input" placeholder="Name" name="Driver_Name" required>
+                <input class="form-control form-control-lg" type="text" id="example-Name-input" placeholder="Name" name="Driver_Name" required>
               </div>
             </div>
 
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">นามสกุล:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-address-input" placeholder="Surname" name="Driver_Lastname" required>
+                <input class="form-control form-control-lg" type="text" id="example-Lastname-input" placeholder="Surname" name="Driver_Lastname" required>
               </div>
             </div>
             
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">ชื่อเล่น:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-district-input" placeholder="Nickname" name="Driver_Nickname" required>
+                <input class="form-control form-control-lg" type="text" id="example-Driver_Nickname-input" placeholder="Nickname" name="Driver_Nickname" required>
               </div>
             </div>
             
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">วัน/เดือน/ปี เกิด:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="date" id="example-area-input" name="Driver_Birthday" required>
+                <input class="form-control form-control-lg" type="date" id="example-birthday-input" name="Driver_Birthday" required>
               </div>
             </div>
             
@@ -101,21 +104,21 @@ if(isset($_POST["submit"])){
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">วันออกใบอนุญาตขับขี่:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="date" id="example-code-input" placeholder="Driver Allowed" name="Driver_Allowed" required>
+                <input class="form-control form-control-lg" type="date" id="example-driver_allowed-input" placeholder="Driver Allowed" name="Driver_Allowed" required>
               </div>
             </div>
             
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">วันหมดอายุใบขับขี่:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="date" id="example-tel-input" placeholder="Driver Expired" name="Driver_Expired" required>
+                <input class="form-control form-control-lg" type="date" id="example-driver_exp-input" placeholder="Driver Expired" name="Driver_Expired" required>
               </div>
             </div>
             
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">วันเริ่มทำงาน:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="date" id="example-fax-input" placeholder="Driver Startwork" name="Driver_Startwork">
+                <input class="form-control form-control-lg" type="date" id="example-start_work-input" placeholder="Driver Startwork" name="Driver_Startwork">
               </div>
             </div>
             <div class="form-group row">

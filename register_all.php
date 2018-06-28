@@ -145,6 +145,9 @@ if(isset($_POST["submit"])){
                                     <li>
                                         <a href="entrepreneur/checkDelivery.php">ตรวจสอบข้อมูลการส่งสินค้า</a>
                                     </li>
+                                    <li>
+                                        <a href="entrepreneur/request.php">ร้องขอผู้ส่ง</a>
+                                    </li>
                                 </ul>
                                 <li>
                                     <a href="entrepreneur/route.php">

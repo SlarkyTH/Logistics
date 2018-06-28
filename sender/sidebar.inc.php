@@ -1,14 +1,73 @@
 <section class="sidebar">
       <!-- Sidebar user panel -->
-      <div class="user-panel">
+      
+      <div class="user-panel" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
         <div class="pull-left info">
           <p><?php $rs=mysql_fetch_object(mysql_query("select * from sender where sen_user_ref='".$_SESSION["xuser_ref"]."'")); echo $rs->sen_name; ?></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <li><i class="fa fa-circle text-success"></i> Online</li>
         </div>
-        <br />
+        <br><br>
       </div>
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>></li>
+        <!-- <li class="header">MAIN NAVIGATION</li> -->
+
+        <li>
+          <a href="home.php">
+            <i class="fa fa-desktop"></i> 
+            <span>หน้าหลัก</span>
+          </a>
+        </li>
+        <li>
+          <a href="logistic.php">
+            <i class="fa fa-truck"></i>
+            <span>ข้อมูลโลจิสติกส์</span>
+          </a>
+        </li>
+        <li>
+        </li>
+        <li>
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"> <i class="fa fa-list"></i>&nbsp;&nbsp;บริการ</a>
+          <ul class="collapse" id="homeSubmenu">
+          <!-- <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+            <a href="#"><i class="glyphicon glyphicon-tasks"></i><span>&nbsp;จัดการการขนส่ง</span></a>
+          </li>
+            <ul class="sub-menu collapse" id="products">
+              <li><a href="createTask.php">สร้างใบงาน</a></li>
+              <li><a href="createOrdersPaid.php">ออกใบสั่งจ้าง</a></li>
+              <li><a href="checkDelivery.php">ตรวจสอบข้อมูลการส่งสินค้า</a></li>
+              <li><a href="request.php">ร้องขอผู้ส่ง</a></li>
+            </ul> -->
+            <li><a href="/logistics/register_driver.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;เพิ่มข้อมูลคนขับ</span></a></li>
+            <li><a href="/logistics/register_car.php"><i class="fa fa-tint"></i><span>&nbsp;&nbsp;เพิ่มข้อมูลรถ</span></a></li>
+            <!-- <li><a href="managementAccounting.php"><i class="fa fa-user"></i><span>&nbsp;&nbsp;จัดการทางบัญชี</span></a></li>
+            <li><a href="checkPayments.php"><i class="fa fa-dollar"></i><span>&nbsp;&nbsp;ตรวจสอบการชำระเงิน</span></a></li>
+            <li><a href="message.php"><i class="fa fa-comments"></i><span>&nbsp;&nbsp;จัดส่งข้อความ</span></a></li>
+            <li><a href="statistic.php"><i class="fa fa-bar-chart"></i><span>&nbsp;&nbsp;สถิติ</span></a></li>
+            <li><a href="report.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;พิมพ์รายงาน</span></a></li> -->
+          </ul>
+          </li>
+        
+        <li>
+          <a href="news.php">
+            <i class="fa fa-bullhorn"></i> 
+            <span>ข่าวสารและกิจกรรม</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.php">
+            <i class="fa fa-paper-plane"></i> 
+            <span>ติดต่อเรา</span>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="request.php">
+            <i class="fa fa-user"></i> 
+            <span>Request Car</span>
+          </a>
+        </li>
+        
         <li>
           <a href="index.php">
             <i class="fa fa-dashboard"></i> 
@@ -17,39 +76,57 @@
         </li>
         
         <li>
+          <a href="product.php">
+            <i class="fa fa-shopping-basket"></i> 
+            <span>Pending Send</span>
+          </a>
+        </li>
+        
+        <li>
           <a href="order.php">
-            <i class="ion ion-archive"></i>
-            <span>Request</span>
+            <i class="fa fa-shopping-basket"></i> 
+            <span>Pending Recieve</span>
           </a>
         </li>
         
         <li>
-          <a href="cars.php">
-            <i class="fa fa-car"></i> 
-            <span>Lists of Cars</span>
+          <a href="history.php">
+            <i class="fa fa-history"></i> 
+            <span>Order have been sent</span>
           </a>
         </li>
         
         <li>
-          <a href="drivers.php">
-            <i class="fa fa-user"></i> 
-            <span>Lists of Driver</span>
+          <a href="report.php">
+            <i class="fa fa-newspaper-o"></i> 
+            <span>Report</span>
           </a>
         </li>
-        
-        <li>
-          <a href="request.php">
-            <i class="fa fa-car"></i> 
-            <span>Request Car</span>
-          </a>
-        </li>
-        
-        <li>
+         -->
+        <li <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
           <a href="logout.php">
             <i class="fa fa-sign-out"></i> 
-            <span>Logout</span>
+            <span>ออกจากระบบ</span>
           </a>
         </li>
+        <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+              <a href="../login.php">
+                <i class="fa fa-user"></i>
+                <span>เข้าสู่ระบบ
+                </span>
+              </a>
+            </li>
 
+            <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+              <a href="../register_all.php">
+                <i class="fa fa-user"></i>
+                <span>สมัครสมาชิก
+                </span>
+              </a>
+            </li>
+        <!-- <li><a href="#">จัดการชำระเงิน</a></li>
+        <li><a href="#">จัดส่งข้อความ</a></li>
+        <li><a href="#">สถิติ</a></li>
+        <li><a href="report.php">พิมพ์รายงาน</a></li> -->
       </ul>
     </section>

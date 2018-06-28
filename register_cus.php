@@ -11,12 +11,12 @@ if(isset($_POST["submit"])){
 	`Cus_Area`, 
 	`Cus_Province`, 
 	`Cus_Code`, 
-  `Cus_Tel`,
+	`Cus_Tel`, 
 	`Cus_Fax`, 
 	`Cus_Email`, 
 	`Cus_Website`, 
-	`Cus_Contacts`, 
-	`Cus_Telcontacts`,
+	`Cus_Contacts`,
+	`Cus_Telcontacts`
 	) VALUES (
 	NULL, 
 	'".$_POST["Cus_Name"]."', 
@@ -28,10 +28,9 @@ if(isset($_POST["submit"])){
 	'".$_POST["Cus_Tel"]."', 
 	'".$_POST["Cus_Fax"]."', 
 	'".$_POST["Cus_Email"]."', 
-  '".$_POST["Cus_Website"]."',
-  '".$_POST["Cus_Contacts"]."',
-  '".$_POST["Cus_Telcontacts"]."',
-	'".$user_ref."'
+	'".$_POST["Cus_Website"]."', 
+	'".$_POST["Cus_Contacts"]."',
+	'".$_POST["Cus_Telcontacts"]."'
 	);");
 	
 	mysql_query("INSERT INTO `login` (`log_id`, `log_user`, `log_passwd`, `log_user_ref`, `log_user_type`) VALUES (NULL, '".$_POST["user"]."', '".$_POST["passwd"]."', '".$user_ref."', 'customer');");
@@ -147,7 +146,7 @@ if(isset($_POST["submit"])){
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Email:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-email-input" placeholder="Email" name="Cus_Email" required>
+                <input class="form-control form-control-lg" type="email" id="example-email-input" placeholder="Email" name="Cus_Email" required>
               </div>
             </div>
             
@@ -159,16 +158,16 @@ if(isset($_POST["submit"])){
             </div>
             
             <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Contact:</label>
+              <label for="example-password-input" class="col-2 col-form-label">Contacts:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-website-input" placeholder="Contact" name="Cus_Contact">
+                <input class="form-control form-control-lg" type="text" id="example-contacts-input" placeholder="Contacts" name="Cus_Contacts">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Telephone Contact:</label>
               <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-website-input" placeholder="Telephone Contact" name="Cus_Telecontacts">
+                <input class="form-control form-control-lg" type="text" id="example-Telephone-Contacts-input" placeholder="Telephone Contacts" name="Cus_Telcontacts">
               </div>
             </div>
 
