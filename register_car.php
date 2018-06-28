@@ -2,172 +2,278 @@
 include("library/class.mysqldb.php");
 include("library/config.inc.php");
 if(isset($_POST["submit"])){
+  $rs=mysql_fetch_object(mysql_query("select * from entrepreneur where Enter_user_ref='".$_SESSION["xuser_ref"]."'"));
+  $id = $rs->Enter_id;
 	$user_ref=rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
-	mysql_query("INSERT INTO `Cus_id` (
-	`Cus_Id`, 
-	`Cus_Name`, 
-	`Cus_Address`, 
-	`Cus_District`, 
-	`Cus_Area`, 
-	`Cus_Province`, 
-	`Cus_Code`, 
-  `Cus_Tel`,
-	`Cus_Fax`, 
-	`Cus_Email`, 
-	`Cus_Website`, 
-	`Cus_Contacts`, 
-	`Cus_Telcontacts`,
+	mysql_query("INSERT INTO `driver` (
+	`Driver_Id`, 
+	`Driver_Name`, 
+	`Driver_Lastname`, 
+	`Driver_Nickname`, 
+	`Driver_Birthday`, 
+	`Driver_License`, 
+	`Driver_Allowed`, 
+	`Driver_Expired`, 
+	`Driver_Startwork`, 
+	`Enter_Id` 
 	) VALUES (
 	NULL, 
-	'".$_POST["Cus_Name"]."', 
-	'".$_POST["Cus_Address"]."', 
-	'".$_POST["Cus_District"]."', 
-	'".$_POST["Cus_Area"]."', 
-	'".$_POST["Cus_Province"]."', 
-	'".$_POST["Cus_Code"]."', 
-	'".$_POST["Cus_Tel"]."', 
-	'".$_POST["Cus_Fax"]."', 
-	'".$_POST["Cus_Email"]."', 
-  '".$_POST["Cus_Website"]."',
-  '".$_POST["Cus_Contacts"]."',
-  '".$_POST["Cus_Telcontacts"]."',
-	'".$user_ref."'
+	'".$_POST["Driver_Name"]."', 
+	'".$_POST["Driver_Lastname"]."', 
+	'".$_POST["Driver_Nickname"]."', 
+	'".$_POST["Driver_Birthday"]."', 
+	'".$_POST["Driver_License"]."', 
+	'".$_POST["Driver_Allowed"]."', 
+	'".$_POST["Driver_Expired"]."', 
+  '".$_POST["Driver_Startwork"]."', 
+  $id
 	);");
-	
-	mysql_query("INSERT INTO `login` (`log_id`, `log_user`, `log_passwd`, `log_user_ref`, `log_user_type`) VALUES (NULL, '".$_POST["user"]."', '".$_POST["passwd"]."', '".$user_ref."', 'customer');");
-	
 	header("location:index.php");
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en">
-<head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>TMS - Transport Management System</title>
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<!-- jQuery first, then Tether, then Bootstrap JS. -->
-<script src="js/jquery-3.1.1.slim.min.js"></script>
-<script src="js/tether.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<style>
-.selector-for-some-widget {
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TMS - Entrepreneur Zone</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="entrepreneur/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="entrepreneur/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="entrepreneur/dist/css/skins/_all-skins.min.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="entrepreneur/plugins/morris/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="entrepreneur/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="entrepreneur/plugins/datepicker/datepicker3.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="entrepreneur/plugins/daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="entrepreneur/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <!-- <style>
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
 }
-</style>
-</head>
+table {
+    border-spacing: 15px;
+}
+input {
+    width: 50%;
+}
+</style> -->
+  </head>
 
-<body>
-<div class="container-fluid">
+  <body class="hold-transition skin-blue sidebar-mini" style="font-family: 'Kanit', sans-serif;">
+    <div class="wrapper">
 
-	<nav class="breadcrumb">
-      <a class="breadcrumb-item" href="index.php">Login</a>
-    </nav>
-
-	<div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-3">Become Customer</h1>
-        <p class="lead">Register the form to be Customer.</p>
-        <p class="lead">
-        <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Full Name:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-fullname-input" placeholder="Full Name" name="Cus_Name" required>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Address:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-address-input" placeholder="Address" name="Cus_Address" required>
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">District:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-district-input" placeholder="District" name="Cus_District" required>
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Area:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-area-input" placeholder="Area" name="Cus_Area" required>
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Province:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-province-input" placeholder="Province" name="Cus_Province" required>
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Zip Code:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-code-input" placeholder="Zip Code" name="Cus_Code" required>
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Telephone:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-tel-input" placeholder="Telephone" name="Cus_Tel" required>
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Fax:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-fax-input" placeholder="Fax" name="Cus_Fax">
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Email:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-email-input" placeholder="Email" name="Cus_Email" required>
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Website:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-website-input" placeholder="http://www.website.com" name="Cus_Website">
-              </div>
-            </div>
-            
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Contact:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-website-input" placeholder="Contact" name="Cus_Contact">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Telephone Contact:</label>
-              <div class="col-10">
-                <input class="form-control form-control-lg" type="text" id="example-website-input" placeholder="Telephone Contact" name="Cus_Telecontacts">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="offset-sm-2 col-sm-10">
-                <button type="submit" class="btn btn-primary btn-lg" name="submit" value="submit">Register</button>
-              </div>
-            </div>
-        </form>
-        </p>
+      <?php include("header.inc.php"); ?>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+      <!-- Sidebar user panel -->
+      
+      <div class="user-panel" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+        <div class="pull-left info">
+          <p><?php $rs=mysql_fetch_object(mysql_query("select * from sender where sen_user_ref='".$_SESSION["xuser_ref"]."'")); echo $rs->sen_name; ?></p>
+          <li><i class="fa fa-circle text-success"></i> Online</li>
+        </div>
+        <br><br>
       </div>
-	</div>
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>></li>
+        <!-- <li class="header">MAIN NAVIGATION</li> -->
 
-</div>
-</body>
-</html>
+        <li>
+          <a href="sender/home.php">
+            <i class="fa fa-desktop"></i> 
+            <span>หน้าหลัก</span>
+          </a>
+        </li>
+        <li>
+          <a href="sender/logistic.php">
+            <i class="fa fa-truck"></i>
+            <span>ข้อมูลโลจิสติกส์</span>
+          </a>
+        </li>
+        <li>
+        </li>
+        <li>
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"> <i class="fa fa-list"></i>&nbsp;&nbsp;บริการ</a>
+          <ul class="collapse" id="homeSubmenu">
+            <li><a href="/logistics/register_driver.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;เพิ่มข้อมูลคนขับ</span></a></li>
+            <li><a href="/logistics/register_car.php"><i class="fa fa-tint"></i><span>&nbsp;&nbsp;เพิ่มข้อมูลรถ</span></a></li>
+          </ul>
+          </li>
+        
+        <li>
+          <a href="sender/news.php">
+            <i class="fa fa-bullhorn"></i> 
+            <span>ข่าวสารและกิจกรรม</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="sender/contact.php">
+            <i class="fa fa-paper-plane"></i> 
+            <span>ติดต่อเรา</span>
+          </a>
+        </li>
+        <li <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+          <a href="sender/logout.php">
+            <i class="fa fa-sign-out"></i> 
+            <span>ออกจากระบบ</span>
+          </a>
+        </li>
+        <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+              <a href="../login.php">
+                <i class="fa fa-user"></i>
+                <span>เข้าสู่ระบบ
+                </span>
+              </a>
+            </li>
+
+            <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+              <a href="../register_all.php">
+                <i class="fa fa-user"></i>
+                <span>สมัครสมาชิก
+                </span>
+              </a>
+            </li>
+      </ul>
+    </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>Register Car</h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- Main row -->
+          <!-- /.nav-tabs-custom -->
+
+          <!-- Chat box -->
+          <!-- /.box (chat box) -->
+
+          <!-- TO DO List -->
+          <div class="box box-primary">
+            <form action="" method="get">
+              <div class="table-responsive">
+                  <h3 style="margin-bottom: 20px;">&nbsp;เพิ่มข้อมูลรถ</h3>
+                  <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+                      <div class="offset-sm-2 col-sm-10">
+                      <label for="example-password-input" class="col-2 col-form-label">ทะเบียนรถ:</label>
+                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_License-input" placeholder="Car License" name="Car_License" required>
+                      </div>
+                      <div class="offset-sm-2 col-sm-10">
+                      <br><label for="example-password-input" class="col-2 col-form-label">ประเภทรถ:</label>
+                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Type-input" placeholder="Car Type" name="Car_Type" required>
+                      </div>
+                      <div class="offset-sm-2 col-sm-10">
+                      <br><label for="example-password-input" class="col-2 col-form-label">ยี่ห้อรถ:</label>
+                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Brand-input" placeholder="Car Brand" name="Car_Brand" required>
+                      </div>
+                      <div class="offset-sm-2 col-sm-10">
+                      <br><label for="example-password-input" class="col-2 col-form-label">รุ่นรถ:</label>
+                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Model-input" placeholder="Car Model" name="Car_Model" required>
+                      </div>
+                      <div class="offset-sm-2 col-sm-10">
+                      <br><label for="example-password-input" class="col-2 col-form-label">ปีที่ออกรถ:</label>
+                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Year-License" placeholder="Car Year" name="Car_Year" required>
+                      </div>
+                      <div class="offset-sm-2 col-sm-10">
+                      <br><label for="example-password-input" class="col-2 col-form-label">สีรถ:</label>
+                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Color-input" placeholder="Car Color" name="Car_Color" required>
+                      </div>
+                      <div class="offset-sm-2 col-sm-10">
+                      <br><label for="example-password-input" class="col-2 col-form-label">รูปรถ:</label>
+                        <input style="width: 120%;" class="form-control form-control-lg" type="file" id="example-Car_Picture-input" placeholder="Car Picture" name="Car_Picture" required>
+                      </div>
+                      <center>
+                      <div class="offset-sm-2 col-sm-10">
+                        <br><button type="submit" class="btn btn-primary btn-lg" name="submit" value="submit">Register</button>
+                      </div>
+                      </center>
+                </form>
+              </div>
+
+            </form>
+          </div>
+        </section>
+      </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery 3.1.1 -->
+    <script src="entrepreneur/plugins/jQuery/jquery-3.1.1.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="entrepreneur/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Morris.js charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="entrepreneur/plugins/morris/morris.min.js"></script>
+    <!-- Sparkline -->
+    <script src="entrepreneur/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="entrepreneur/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="entrepreneur/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="entrepreneur/plugins/knob/jquery.knob.js"></script>
+    <!-- daterangepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="entrepreneur/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="entrepreneur/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="entrepreneur/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="entrepreneur/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="entrepreneur/plugins/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="entrepreneur/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="entrepreneur/dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="entrepreneur/dist/js/demo.js"></script>
+  </body>
+
+  </html>
