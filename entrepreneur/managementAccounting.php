@@ -68,30 +68,51 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
   </head>
   <script>
     $(document).ready(function () {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $("#add_field_button"); //Add button ID
+    
+    var x = 0; //initlal text box count
       $('.price').keyup(function () {
         if (event.which >= 37 && event.which <= 40) return;
-       
+
 
         $(this).val(function (index, value) {
           return value
             .replace(/\D/g, "")
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         });
-        
+
       });
-      $('#submit').click(function() {
+      $('#submit').click(function () {
         var sum = 0
 
         $('.price').each(function () {
-          sum += Number($(this).val().replace(',',''));
+          sum += Number($(this).val().replace(',', ''));
 
         });
 
         $('#totalprice').html(sum.toLocaleString());
       })
-      $('#clearData').click(function(){
+      $('#clearData').click(function () {
         $('#totalprice').html(0);
       })
+
+      $(add_button).click(function(e){ //on add input button click
+      
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            
+            $(wrapper).append('<tr><td><input type="text" name="nameother[]" value="รายการที่'+x+'"class="remove_field""></td><td><input type="text" name="priceother[]" class="price"><a href="#" class="remove_field">Remove</a></td></tr>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).closest('tr').remove(); x--;
+    })
+
+
 
     });
   </script>
@@ -130,14 +151,14 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
                 <p style="padding-left:10%;border-top:none;">วัน / เดือน / ปี
                   <input type="date" name="emp_price" id="emp_price" class="price">
                   <center>
-                    <table class="table" style="border:none;width:40%;">
+                    <table class="table input_fields_wrap" style="border:none;width:40%;">
                       <thead>
                         <tr>
                           <th style="border-bottom:none;">
                           </th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody class="">
                         <tr>
                           <td>ค่าจ้างพนักงาน</td>
                           <td>
@@ -156,32 +177,20 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
                             <input type="text" name="repairprice" id="repairprice" class="price">
                           </td>
                         </tr>
-                        <tr>
-                          <td>อื่นๆ</td>
-                          <td>
-                            <input type="text" name="other" id="other" class="price">
-                          </td>
-                          
-                           
-                            
-                          <tr class="text-center">
-                          <td><button type="reset" class="btn btn-bitbucket" style="" id="clearData">ล้าง</button></td>
-                              <td style="text-align:left;"><button type="button" class="btn btn-reddit" id="submit">ตกลง</button></td>   
-                          </tr>
-                          <tr>
-                            
-                          </tr>
                       </tbody>
-                    </table>                    
-                    
-                      <b>รวมค่าใช้จ่ายทั้งสิ้น :
-                        <label for="" name="totalprice" id="totalprice" style="margin-right:20px;">0</label>
-                      </b>
-                      <button type="button" class="btn btn-success" style="margin-right:20px;">บันทึก</button>
-                      <button type="button" class="btn btn-danger" style="margin-right:20px;">ยกเลิก</button>
-                    </p>
-                     
-                      </center>
+                    </table>
+                    <button type="reset" class="btn btn-vimeo" style="" id="add_field_button">เพิ่มเติม</button>
+                    <button type="reset" class="btn btn-bitbucket" style="" id="clearData">ล้าง</button>
+                    <button type="button" class="btn btn-reddit" id="submit">ตกลง</button>
+                    <br>
+                    <br>
+                    <b>รวมค่าใช้จ่ายทั้งสิ้น :
+                      <label for="" name="totalprice" id="totalprice" style="margin-right:20px;">0</label>
+                    </b>
+                    <button type="button" class="btn btn-success" style="margin-right:20px;">บันทึก</button>
+                    <button type="button" class="btn btn-danger" style="margin-right:20px;">ยกเลิก</button>
+                </p>
+                </center>
               </div>
             </form>
           </div>
