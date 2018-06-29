@@ -1,11 +1,32 @@
 <?php
 include("../library/class.mysqldb.php");
 include("../library/config.inc.php");
+if(isset($_POST["submit"])){
+	$user_ref=rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+	mysql_query("INSERT INTO `fuel_resources` (
+	`fuel_id`, 
+	`fuel_date`, 
+	`fuel_licenseplate`, 
+	`fuel_fuel`, 
+	`fuel_fuelprice`, 
+	`fuel_milestart`, 
+	`fuel_mileend`, 
+	) VALUES (
+	NULL, 
+	'".$_POST["date"]."', 
+	'".$_POST["licenseplate"]."', 
+	'".$_POST["fuel"]."', 
+	'".$_POST["fuelprice"]."', 
+	'".$_POST["milestart"]."', 
+	'".$_POST["mileend"]."', 
+	);");
+
+	header("location:index.php");
+}
 ?>
 <?php
 session_start();
 if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -89,7 +110,7 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
           
             <div class="container">
             <p style="padding-left:15%;padding-top:5%">วัน / เดือน / ปี
-            <input type="date" name="" id="">
+            <input type="date" name="date" id="date">
             <center>
               <table class="table" style="border:none;width:40%;" >
                 <thead>
@@ -132,8 +153,7 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
               </table>
               
                 <p style="margin:20px;padding:20px;">
-                  <button type="button" class="btn btn-success left" style="margin-right:10px">ตกลง</button>
-
+                  <button type="submit" class="btn btn-success left" name="submit" value="submit" style="margin-right:10px">บันทึก</button>
                   <button type="button" class="btn btn-danger" style="margin-left:10px">ยกเลิก</button>
               
               </p>
