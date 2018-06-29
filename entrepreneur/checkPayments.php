@@ -95,7 +95,7 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
                   <tbody>
                     <tr class="text-center">
                       <td style="padding-bottom:20px;">
-                        <input type="radio" name="" id="">
+                        <input type="radio" name="radio" id="">
                         <label for="">ชำระเงินต้นทาง</label>
                         <td style="border-bottom:none">
                           <p>ผู้ใช้บริการสามารถชำระเงินได้ด้วยระบบ QR Payment</p>
@@ -104,7 +104,7 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
                     </tr>
                     <tr class="text-center">
                       <td style="border-top:none;padding-top:20px;">
-                        <input type="radio" name="" id="">
+                        <input type="radio" name="radio" id="">
                         <label for="">ชำระเงินปลายทาง</label>
                       </td>
                       <td style="border-top:none">

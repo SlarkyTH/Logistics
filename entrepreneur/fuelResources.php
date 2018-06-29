@@ -2,7 +2,6 @@
 include("../library/class.mysqldb.php");
 include("../library/config.inc.php");
 if(isset($_POST["submit"])){
-	$user_ref=rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
 	mysql_query("INSERT INTO `fuel_resources` (
 	`fuel_id`, 
 	`fuel_date`, 
@@ -19,15 +18,11 @@ if(isset($_POST["submit"])){
 	'".$_POST["fuelprice"]."', 
 	'".$_POST["milestart"]."', 
 	'".$_POST["mileend"]."', 
-	);");
-
-	header("location:index.php");
+  );");
+	// header("location:index.php");
 }
 ?>
-<?php
-session_start();
-if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
-?>
+
 <!DOCTYPE html>
 <html>
 
@@ -123,31 +118,31 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
                   <tr>
                     <td>ทะเบียนรถ</td>
                     <td>
-                      <input type="text" name="licenseplate" id="licenseplate">
+                      <input type="text" name="licenseplate" id="licenseplate" required>
                     </td>
                   </tr>
                   <tr>
                     <td>ค่าเชื้อเพลิง</td>
                     <td>
-                      <input type="text" name="fuel" id="fuel">
+                      <input type="text" name="fuel" id="fuel" required>
                     </td>                    
                   </tr>
                   <tr>
                     <td>ราคาเชื้อเพลิง / ลิตร</td>
                     <td>
-                      <input type="text" name="fuelprice" id="fuelprice">
+                      <input type="text" name="fuelprice" id="fuelprice" required>
                     </td>
                   </tr>
                   <tr>
                   <td>เลขไมล์ต้นทาง</td>
                     <td>
-                      <input type="text" name="milestart" id="milestart">
+                      <input type="text" name="milestart" id="milestart" required>
                     </td>
                   </tr>
                   <tr>
                   <td>เลขไมล์ปลายทาง</td>
                     <td>
-                      <input type="text" name="mileend" id="mileend">
+                      <input type="text" name="mileend" id="mileend" required>
                     </td></tr>
                 </tbody>
               </table>
@@ -155,7 +150,6 @@ if(!isset($_SESSION['logged'])) header("location: /logistics/login.php");
                 <p style="margin:20px;padding:20px;">
                   <button type="submit" class="btn btn-success left" name="submit" value="submit" style="margin-right:10px">บันทึก</button>
                   <button type="button" class="btn btn-danger" style="margin-left:10px">ยกเลิก</button>
-              
               </p>
               </center>
             </div>
