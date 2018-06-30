@@ -2,34 +2,52 @@
 include("library/class.mysqldb.php");
 include("library/config.inc.php");
 if(isset($_POST["submit"])){
-  $rs=mysql_fetch_object(mysql_query("select * from entrepreneur where Enter_user_ref='".$_SESSION["xuser_ref"]."'"));
-  $id = $rs->Enter_id;
 	$user_ref=rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
-	mysql_query("INSERT INTO `driver` (
-	`Driver_Id`, 
-	`Driver_Name`, 
-	`Driver_Lastname`, 
-	`Driver_Nickname`, 
-	`Driver_Birthday`, 
-	`Driver_License`, 
-	`Driver_Allowed`, 
-	`Driver_Expired`, 
-	`Driver_Startwork`, 
-	`Enter_Id` 
+	mysql_query("INSERT INTO `car` (
+	`Car_Id`, 
+	`Car_license`, 
+	`Car_Type`, 
+	`Car_Brand`, 
+	`Car_Model`, 
+	`Car_Year`, 
+	`Car_Color`, 
+	`Car_Picture`, 
+	`Driver_Id`,
 	) VALUES (
 	NULL, 
-	'".$_POST["Driver_Name"]."', 
-	'".$_POST["Driver_Lastname"]."', 
-	'".$_POST["Driver_Nickname"]."', 
-	'".$_POST["Driver_Birthday"]."', 
-	'".$_POST["Driver_License"]."', 
-	'".$_POST["Driver_Allowed"]."', 
-	'".$_POST["Driver_Expired"]."', 
-  '".$_POST["Driver_Startwork"]."', 
-  $id
+	'".$_POST["Car_Id"]."', 
+	'".$_POST["Car_license"]."', 
+	'".$_POST["Car_Type"]."', 
+	'".$_POST["Car_Brand"]."', 
+	'".$_POST["Car_Model"]."', 
+	'".$_POST["Car_Year"]."', 
+	'".$_POST["Car_Color"]."', 
+  '".$_POST["Car_Picture"]."', 
+  '".$_POST["Driver_Id"]."'
 	);");
-	header("location:index.php");
+	// header("location:index.php");
 }
+?>
+<?php
+$message = '';
+if (isset($_POST["add_user"]) && $_POST["hdnCmd"] == "Add") {
+  $target_dir = "imgUpload/";
+  $target_file = $target_dir . basename($_FILES["xray"]["name"]);
+  $uploadOk = 0;
+  $fileileType = pathinfo($target_file, PATHINFO_EXTENSION);
+  if (!($fileileType == "jpg" || $fileileType == "png")) {
+      $message = "ขออภัย, กรุณาใช้ไฟล์นามสกุล .jpg หรือ .png เท่านั้น";
+      $uploadOk = 0;
+  } else {
+      $type = explode(".", $_FILES["xray"]["name"]);
+      //var_dump(end($type));
+      $ext = end($type);
+      $location = "imgXray/" . $Random . '.' . $ext;
+
+      move_uploaded_file($_FILES["xray"]["tmp_name"], $location);
+      $uploadOk = 1;
+      //print($location);
+  }
 ?>
   <!DOCTYPE html>
   <html>
@@ -93,61 +111,76 @@ input {
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-      <!-- Sidebar user panel -->
-      
-      <div class="user-panel" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
-        <div class="pull-left info">
-          <p><?php $rs=mysql_fetch_object(mysql_query("select * from sender where sen_user_ref='".$_SESSION["xuser_ref"]."'")); echo $rs->sen_name; ?></p>
-          <li><i class="fa fa-circle text-success"></i> Online</li>
-        </div>
-        <br><br>
-      </div>
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>></li>
-        <!-- <li class="header">MAIN NAVIGATION</li> -->
+          <!-- Sidebar user panel -->
 
-        <li>
-          <a href="sender/home.php">
-            <i class="fa fa-desktop"></i> 
-            <span>หน้าหลัก</span>
-          </a>
-        </li>
-        <li>
-          <a href="sender/logistic.php">
-            <i class="fa fa-truck"></i>
-            <span>ข้อมูลโลจิสติกส์</span>
-          </a>
-        </li>
-        <li>
-        </li>
-        <li>
-          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"> <i class="fa fa-list"></i>&nbsp;&nbsp;บริการ</a>
-          <ul class="collapse" id="homeSubmenu">
-            <li><a href="/logistics/register_driver.php"><i class="fa fa-rocket"></i><span>&nbsp;&nbsp;เพิ่มข้อมูลคนขับ</span></a></li>
-            <li><a href="/logistics/register_car.php"><i class="fa fa-tint"></i><span>&nbsp;&nbsp;เพิ่มข้อมูลรถ</span></a></li>
-          </ul>
-          </li>
-        
-        <li>
-          <a href="sender/news.php">
-            <i class="fa fa-bullhorn"></i> 
-            <span>ข่าวสารและกิจกรรม</span>
-          </a>
-        </li>
+          <div class="user-panel" <?php if(!isset($_SESSION[ 'logged'])) {echo " style='display: none'"; } ?>>
+            <div class="pull-left info">
+              <p>
+                <?php $rs=mysql_fetch_object(mysql_query("select * from sender where sen_user_ref='".$_SESSION["xuser_ref"]."'")); echo $rs->sen_name; ?>
+              </p>
+              <li>
+                <i class="fa fa-circle text-success"></i> Online</li>
+            </div>
+            <br>
+            <br>
+          </div>
+          <ul class="sidebar-menu" data-widget="tree">
+            <li class="header" <?php if(!isset($_SESSION[ 'logged'])) {echo " style='display: none'"; } ?>></li>
+            <!-- <li class="header">MAIN NAVIGATION</li> -->
 
-        <li>
-          <a href="sender/contact.php">
-            <i class="fa fa-paper-plane"></i> 
-            <span>ติดต่อเรา</span>
-          </a>
-        </li>
-        <li <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
-          <a href="sender/logout.php">
-            <i class="fa fa-sign-out"></i> 
-            <span>ออกจากระบบ</span>
-          </a>
-        </li>
-        <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+            <li>
+              <a href="sender/home.php">
+                <i class="fa fa-desktop"></i>
+                <span>หน้าหลัก</span>
+              </a>
+            </li>
+            <li>
+              <a href="sender/logistic.php">
+                <i class="fa fa-truck"></i>
+                <span>ข้อมูลโลจิสติกส์</span>
+              </a>
+            </li>
+            <li>
+            </li>
+            <li>
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                <i class="fa fa-list"></i>&nbsp;&nbsp;บริการ</a>
+              <ul class="collapse" id="homeSubmenu">
+                <li>
+                  <a href="/logistics/register_driver.php">
+                    <i class="fa fa-rocket"></i>
+                    <span>&nbsp;&nbsp;เพิ่มข้อมูลคนขับ</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/logistics/register_car.php">
+                    <i class="fa fa-tint"></i>
+                    <span>&nbsp;&nbsp;เพิ่มข้อมูลรถ</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="sender/news.php">
+                <i class="fa fa-bullhorn"></i>
+                <span>ข่าวสารและกิจกรรม</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="sender/contact.php">
+                <i class="fa fa-paper-plane"></i>
+                <span>ติดต่อเรา</span>
+              </a>
+            </li>
+            <li <?php if(!isset($_SESSION[ 'logged'])) {echo " style='display: none'"; } ?>>
+              <a href="sender/logout.php">
+                <i class="fa fa-sign-out"></i>
+                <span>ออกจากระบบ</span>
+              </a>
+            </li>
+            <li <?php if(isset($_SESSION[ 'logged'])) {echo " style='display: none'"; } ?>>
               <a href="../login.php">
                 <i class="fa fa-user"></i>
                 <span>เข้าสู่ระบบ
@@ -155,15 +188,15 @@ input {
               </a>
             </li>
 
-            <li <?php if(isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
+            <li <?php if(isset($_SESSION[ 'logged'])) {echo " style='display: none'"; } ?>>
               <a href="../register_all.php">
                 <i class="fa fa-user"></i>
                 <span>สมัครสมาชิก
                 </span>
               </a>
             </li>
-      </ul>
-    </section>
+          </ul>
+        </section>
         <!-- /.sidebar -->
       </aside>
 
@@ -186,41 +219,62 @@ input {
           <div class="box box-primary">
             <form action="" method="get">
               <div class="table-responsive">
-                  <h3 style="margin-bottom: 20px;">&nbsp;เพิ่มข้อมูลรถ</h3>
-                  <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
-                      <div class="offset-sm-2 col-sm-10">
-                      <label for="example-password-input" class="col-2 col-form-label">ทะเบียนรถ:</label>
-                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_License-input" placeholder="Car License" name="Car_License" required>
-                      </div>
-                      <div class="offset-sm-2 col-sm-10">
-                      <br><label for="example-password-input" class="col-2 col-form-label">ประเภทรถ:</label>
-                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Type-input" placeholder="Car Type" name="Car_Type" required>
-                      </div>
-                      <div class="offset-sm-2 col-sm-10">
-                      <br><label for="example-password-input" class="col-2 col-form-label">ยี่ห้อรถ:</label>
-                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Brand-input" placeholder="Car Brand" name="Car_Brand" required>
-                      </div>
-                      <div class="offset-sm-2 col-sm-10">
-                      <br><label for="example-password-input" class="col-2 col-form-label">รุ่นรถ:</label>
-                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Model-input" placeholder="Car Model" name="Car_Model" required>
-                      </div>
-                      <div class="offset-sm-2 col-sm-10">
-                      <br><label for="example-password-input" class="col-2 col-form-label">ปีที่ออกรถ:</label>
-                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Year-License" placeholder="Car Year" name="Car_Year" required>
-                      </div>
-                      <div class="offset-sm-2 col-sm-10">
-                      <br><label for="example-password-input" class="col-2 col-form-label">สีรถ:</label>
-                        <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Color-input" placeholder="Car Color" name="Car_Color" required>
-                      </div>
-                      <div class="offset-sm-2 col-sm-10">
-                      <br><label for="example-password-input" class="col-2 col-form-label">รูปรถ:</label>
-                        <input style="width: 120%;" class="form-control form-control-lg" type="file" id="example-Car_Picture-input" placeholder="Car Picture" name="Car_Picture" required>
-                      </div>
-                      <center>
-                      <div class="offset-sm-2 col-sm-10">
-                        <br><button type="submit" class="btn btn-primary btn-lg" name="submit" value="submit">Register</button>
-                      </div>
-                      </center>
+                <h3 style="margin-bottom: 20px;">&nbsp;เพิ่มข้อมูลรถ</h3>
+                <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+                  <div class="offset-sm-2 col-sm-10">
+                    <label for="example-password-input" class="col-2 col-form-label">ทะเบียนรถ:</label>
+                    <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_License-input" placeholder="Car License"
+                      name="Car_License" required>
+                  </div>
+                  <div class="offset-sm-2 col-sm-10">
+                    <br>
+                    <label for="example-password-input" class="col-2 col-form-label">ประเภทรถ:</label>
+                    <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Type-input" placeholder="Car Type"
+                      name="Car_Type" required>
+                  </div>
+                  <div class="offset-sm-2 col-sm-10">
+                    <br>
+                    <label for="example-password-input" class="col-2 col-form-label">ยี่ห้อรถ:</label>
+                    <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Brand-input" placeholder="Car Brand"
+                      name="Car_Brand" required>
+                  </div>
+                  <div class="offset-sm-2 col-sm-10">
+                    <br>
+                    <label for="example-password-input" class="col-2 col-form-label">รุ่นรถ:</label>
+                    <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Model-input" placeholder="Car Model"
+                      name="Car_Model" required>
+                  </div>
+                  <div class="offset-sm-2 col-sm-10">
+                    <br>
+                    <label for="example-password-input" class="col-2 col-form-label">ปีที่ออกรถ:</label>
+                    <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Year-License" placeholder="Car Year"
+                      name="Car_Year" required>
+                  </div>
+                  <div class="offset-sm-2 col-sm-10">
+                    <br>
+                    <label for="example-password-input" class="col-2 col-form-label">สีรถ:</label>
+                    <input style="width: 120%;" class="form-control form-control-lg" type="text" id="example-Car_Color-input" placeholder="Car Color"
+                      name="Car_Color" required>
+                  </div>
+                  <div class="offset-sm-2 col-sm-10">
+                    <br>
+                    <label for="example-password-input" class="col-2 col-form-label">รูปรถ:</label>
+                    <input style="width: 120%;" class="form-control form-control-lg" type="file" id="example-Car_Picture-input" placeholder="Car Picture"
+                      name="Car_Picture" required>
+                  </div>
+                  <div class="offset-sm-2 col-sm-10">
+                    <br>
+                    <label for="example-password-input" class="col-2 col-form-label">ชื่อคนขับ:</label>
+                    <br>
+                    <select class="js-example-basic-single" id="Car_Picture" name="Car_Picture" style="width: 348px;">
+                    </select>
+                    <center>
+                  </div>
+                  <div class="offset-sm-2 col-sm-10">
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-lg" name="submit" value="submit">Register</button>
+                  </div>
+                  </center>
                 </form>
               </div>
 
@@ -274,6 +328,34 @@ input {
     <script src="entrepreneur/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="entrepreneur/dist/js/demo.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".js-example-basic-single").select2({
+          ajax: {
+            dataType: 'json',
+            url: '/entrepreneur/findDriver.php',
+            delay: 250,
+            data: function (params) {
+              return {
+                //alert(params.term);
+                q: params.term,
+                page: params.page
+              };
+            },
+            processResults: function (data, params) {
+              //alert(data);
+              params.page = params.page || 1;
+              return {
+                results: data,
+                pagination: {
+                  more: (params.page * 30) < data.total_count
+                }
+              };
+            }
+          }
+        });
+      });
+    </script>
   </body>
 
   </html>

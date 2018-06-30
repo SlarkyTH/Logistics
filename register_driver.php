@@ -4,7 +4,8 @@ include("library/config.inc.php");
 if(isset($_POST["submit"])){
   $rs=mysql_fetch_object(mysql_query("select * from entrepreneur where Enter_user_ref='".$_SESSION["xuser_ref"]."'"));
   $id = $rs->Enter_id;
-	$user_ref=rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9).rand(0,9);
+  echo ("ID = '" . $_SESSION["xuser_ref"] . "'");
+  // echo($_POST["Driver_Name"] . "','" . $_POST["Driver_Lastname"] . "','" . $_POST["Driver_Nickname"] . "','" . $_POST["Driver_Birthday"] . "','" . $_POST["Driver_License"] . "','" . $_POST["Driver_Allowed"] . "','" . $_POST["Driver_Expired"] . "','" . $_POST["Driver_Startwork"]);
 	mysql_query("INSERT INTO `driver` (
 	`Driver_Id`, 
 	`Driver_Name`, 
@@ -27,8 +28,31 @@ if(isset($_POST["submit"])){
 	'".$_POST["Driver_Expired"]."', 
   '".$_POST["Driver_Startwork"]."', 
   $id
-	);");
-	header("location:index.php");
+  );");
+  // echo("INSERT INTO `driver` (
+  //   `Driver_Id`, 
+  //   `Driver_Name`, 
+  //   `Driver_Lastname`, 
+  //   `Driver_Nickname`, 
+  //   `Driver_Birthday`, 
+  //   `Driver_License`, 
+  //   `Driver_Allowed`, 
+  //   `Driver_Expired`, 
+  //   `Driver_Startwork`, 
+  //   `Enter_Id` 
+  //   ) VALUES (
+  //   NULL, 
+  //   '".$_POST["Driver_Name"]."', 
+  //   '".$_POST["Driver_Lastname"]."', 
+  //   '".$_POST["Driver_Nickname"]."', 
+  //   '".$_POST["Driver_Birthday"]."', 
+  //   '".$_POST["Driver_License"]."', 
+  //   '".$_POST["Driver_Allowed"]."', 
+  //   '".$_POST["Driver_Expired"]."', 
+  //   '".$_POST["Driver_Startwork"]."', 
+  //   $id
+  //   );");
+	// header("location:index.php");
 }
 ?>
   <!DOCTYPE html>
@@ -97,7 +121,7 @@ input {
       
       <div class="user-panel" <?php if(!isset($_SESSION['logged'])) {echo " style='display: none'"; } ?>>
         <div class="pull-left info">
-          <p><?php $rs=mysql_fetch_object(mysql_query("select * from sender where sen_user_ref='".$_SESSION["xuser_ref"]."'")); echo $rs->sen_name; ?></p>
+          <p><?php $rs2=mysql_fetch_object(mysql_query("select * from sender where sen_user_ref='".$_SESSION["xuser_ref"]."'")); echo $rs2->sen_name; ?></p>
           <li><i class="fa fa-circle text-success"></i> Online</li>
         </div>
         <br><br>
@@ -198,7 +222,7 @@ input {
 
           <!-- TO DO List -->
           <div class="box box-primary">
-            <form action="" method="get">
+            <form action="" method="POST">
               <div class="table-responsive">
                   <h3 style="margin-bottom: 20px;">&nbsp;เพิ่มข้อมูลคนขับ</h3>
                   <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
